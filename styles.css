@@ -91,3 +91,10 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .book-bg-body .hero-book {
   background: linear-gradient(135deg, rgba(90,62,43,0.88), rgba(139,94,52,0.86));
 }
+
+.cover-card { overflow: hidden; }
+.book-cover { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 10px 24px rgba(0,0,0,0.15); }
+.table-wrap { overflow-x: auto; }
+.status-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.status-table th, .status-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+.status-table th { background: #f8fafc; }
