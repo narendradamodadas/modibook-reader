@@ -1,3 +1,7 @@
+LIVE READER: https://narendradamodadas.github.io/modibook-reader/
+
+Use the GitHub Pages URL above to read the book as a website. The repo page only shows source files.
+
 # Modibook static reader
 
 This folder contains a static website generated from `modibook.pdf`.
