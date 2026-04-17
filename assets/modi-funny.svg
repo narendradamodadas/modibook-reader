@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Playful stylized Modi portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#f4a261"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="36" fill="url(#bg)"/>
+  <circle cx="160" cy="128" r="72" fill="#f2c9a0"/>
+  <path d="M92 108c10-48 44-78 68-78 40 0 74 32 80 82-25-16-49-20-77-18-27 2-47 9-71 14z" fill="#f6f6f6"/>
+  <path d="M110 98c18-18 40-30 56-30 18 0 40 11 57 30-20-7-37-10-56-10-20 0-37 3-57 10z" fill="#eeeeee"/>
+  <ellipse cx="132" cy="134" rx="24" ry="18" fill="none" stroke="#3d405b" stroke-width="5"/>
+  <ellipse cx="188" cy="134" rx="24" ry="18" fill="none" stroke="#3d405b" stroke-width="5"/>
+  <line x1="156" y1="134" x2="164" y2="134" stroke="#3d405b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="132" cy="134" r="4" fill="#2b2d42"/>
+  <circle cx="188" cy="134" r="4" fill="#2b2d42"/>
+  <path d="M145 160c8 7 21 7 30 0" fill="none" stroke="#7f5539" stroke-width="4" stroke-linecap="round"/>
+  <path d="M126 166c10 7 24 10 34 10s24-3 34-10" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M115 206c14-18 35-29 45-29 10 0 31 11 45 29l9 17H106z" fill="#f8f9fa"/>
+  <path d="M88 292c6-52 44-86 72-86 33 0 66 35 72 86z" fill="#f77f00"/>
+  <path d="M109 63c17-20 34-30 53-30 19 0 38 11 54 32" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  <text x="160" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#3d405b">Modi archive mascot</text>
+</svg>
