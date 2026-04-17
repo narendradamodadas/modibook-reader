@@ -135,8 +135,27 @@
     ];
     const bgEl = document.querySelector('.modibook-bg');
     if (bgEl) {
-      const chosen = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
-      bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.62), rgba(22, 22, 26, 0.62)), url('${chosen}')`;
+      const storageKey = 'modibookBackgroundChoice';
+      let chosen = null;
+      try {
+        chosen = sessionStorage.getItem(storageKey);
+      } catch (e) {}
+      if (!chosen || !BACKGROUNDS.includes(chosen)) {
+        chosen = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+        try {
+          sessionStorage.setItem(storageKey, chosen);
+        } catch (e) {}
+      }
+      const preloader = new Image();
+      preloader.onload = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.62), rgba(22, 22, 26, 0.62)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.onerror = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.62), rgba(22, 22, 26, 0.62)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.src = chosen;
     }
   </script>
 </body>
