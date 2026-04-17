@@ -6,8 +6,9 @@
   <title>Modibook — Book Index</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <main class="index-wrap">
+<body class="book-bg-body">
+  <div class="modibook-bg" aria-hidden="true"></div>
+  <main class="index-wrap index-wrap-overlay">
     <header class="hero hero-book">
       <div class="eyebrow">Book reader</div>
       <h1>Modibook</h1>
@@ -125,6 +126,18 @@
     pageJumpButton.addEventListener('click', goToPage);
     pageJumpInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') goToPage(); });
     renderResults([], '');
+
+    const BACKGROUNDS = [
+      'assets/priestking.jpg',
+      'assets/Mudiji.jpg',
+      'assets/glasses.jpg',
+      'assets/muditiger2.png'
+    ];
+    const bgEl = document.querySelector('.modibook-bg');
+    if (bgEl) {
+      const chosen = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+      bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.62), rgba(22, 22, 26, 0.62)), url('${chosen}')`;
+    }
   </script>
 </body>
 </html>

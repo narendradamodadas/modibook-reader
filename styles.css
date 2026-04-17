@@ -62,3 +62,25 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .page-group { background: #fbfbfb; border-radius: 12px; box-shadow: inset 0 0 0 1px #ececec; padding: 10px 14px; }
 .page-group summary { cursor: pointer; font-weight: 700; }
 .page-chip-grid.grouped { margin-top: 12px; }
+
+.book-bg-body { position: relative; min-height: 100vh; }
+.modibook-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: saturate(1.02) contrast(1.03);
+}
+.index-wrap-overlay { position: relative; z-index: 1; }
+.book-bg-body .panel,
+.book-bg-body .hero-book {
+  backdrop-filter: blur(6px);
+}
+.book-bg-body .panel {
+  background: rgba(255,255,255,0.9);
+}
+.book-bg-body .hero-book {
+  background: linear-gradient(135deg, rgba(90,62,43,0.88), rgba(139,94,52,0.86));
+}
