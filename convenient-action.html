@@ -6,8 +6,9 @@
   <title>Convenient Action: Gujarat's Response to Challenges of Climate Change — Book Index</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <main class="index-wrap">
+<body class="book-bg-body climate-bg-body">
+  <div class="modibook-bg climate-book-bg" aria-hidden="true"></div>
+  <main class="index-wrap index-wrap-overlay">
     <header class="hero hero-book">
       <div class="eyebrow">Book reader</div>
       <h1>Convenient Action</h1>
@@ -24,14 +25,32 @@
       <article class="panel"><h2>Quick links</h2><ul class="quicklinks"><li><a href="books/convenient-action/pages/page-002.html">Foreword</a></li><li><a href="books/convenient-action/pages/page-010.html">Main body start</a></li><li><a href="books/convenient-action/pages/page-050.html">Later policy discussion</a></li></ul></article>
     </section>
 
-    <section class="panel"><h2>Policy goals and outcomes</h2><div class="table-wrap"><table class="status-table"><thead><tr><th>Goal / theme</th><th>Status</th><th>Evidence / outcome</th><th>If incomplete, likely or official reason</th></tr></thead><tbody>
-<tr><td>Combine climate action with development</td><td>Partly achieved</td><td>Gujarat built a reputation for tying climate response to infrastructure, energy, and growth.</td><td>Development remained tied to broader industrial and energy expansion.</td></tr>
-<tr><td>Improve rural electricity reliability</td><td>Largely achieved</td><td>Jyotigram became widely cited for stabilizing rural power supply and feeder separation.</td><td>Agricultural supply still relied on rationing and scheduling.</td></tr>
-<tr><td>Reduce wasteful power use and indirect groundwater stress</td><td>Partly achieved</td><td>Scheduled farm power and feeder reform improved control and predictability.</td><td>Groundwater stress remained structurally linked to irrigation demand.</td></tr>
-<tr><td>Strengthen groundwater and water conservation</td><td>Substantial in some regions</td><td>Large numbers of recharge/check-dam structures were credited with aquifer improvement.</td><td>Water stress and irrigation dependence persisted in many areas.</td></tr>
-<tr><td>Make Gujarat an early solar / renewable leader</td><td>Largely achieved directionally</td><td>Gujarat became strongly associated with early solar and renewable expansion.</td><td>Renewable growth did not eliminate fossil dependence.</td></tr>
-<tr><td>Create a replicable climate-governance model</td><td>Mixed</td><td>The governance narrative influenced later political and policy storytelling.</td><td>Replication depends on state-specific geography, institutions, and finances.</td></tr>
-</tbody></table></div><p class="muted">This assessment summarizes the post-publication record of the main themes associated with the book’s climate-governance narrative.</p></section>
+    <section class="panel score-panel">
+      <h2>Policy goals and outcomes</h2>
+      <p class="muted">Estimated scores below are analytical judgments based on the post-publication record of the main themes associated with the book’s climate-governance narrative. They are not official government percentages.</p>
+      <div class="overall-score-card">
+        <div>
+          <div class="score-label">Estimated total delivery across the book’s main goals</div>
+          <div class="score-big">68%</div>
+        </div>
+        <div class="score-explainer">Calculated as the simple average of the six goal estimates below: 65%, 85%, 55%, 70%, 80%, and 50%.</div>
+      </div>
+      <div class="table-wrap professional-table-wrap">
+        <table class="status-table professional-status-table">
+          <thead>
+            <tr><th>Goal / theme</th><th>Estimated achievement</th><th>Status</th><th>Evidence / outcome</th><th>If incomplete, likely or official reason</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Combine climate action with development</td><td><div class="score-cell"><strong>65%</strong><div class="mini-bar"><span style="width:65%"></span></div></div></td><td><span class="status-badge status-mid">Partly achieved</span></td><td>Gujarat built a reputation for tying climate response to infrastructure, energy, and growth.</td><td>Development remained tied to broader industrial and energy expansion.</td></tr>
+            <tr><td>Improve rural electricity reliability</td><td><div class="score-cell"><strong>85%</strong><div class="mini-bar"><span style="width:85%"></span></div></div></td><td><span class="status-badge status-high">Largely achieved</span></td><td>Jyotigram became widely cited for stabilizing rural power supply and feeder separation.</td><td>Agricultural supply still relied on rationing and scheduling.</td></tr>
+            <tr><td>Reduce wasteful power use and indirect groundwater stress</td><td><div class="score-cell"><strong>55%</strong><div class="mini-bar"><span style="width:55%"></span></div></div></td><td><span class="status-badge status-mid">Partly achieved</span></td><td>Scheduled farm power and feeder reform improved control and predictability.</td><td>Groundwater stress remained structurally linked to irrigation demand.</td></tr>
+            <tr><td>Strengthen groundwater and water conservation</td><td><div class="score-cell"><strong>70%</strong><div class="mini-bar"><span style="width:70%"></span></div></div></td><td><span class="status-badge status-high">Substantial in some regions</span></td><td>Large numbers of recharge/check-dam structures were credited with aquifer improvement.</td><td>Water stress and irrigation dependence persisted in many areas.</td></tr>
+            <tr><td>Make Gujarat an early solar / renewable leader</td><td><div class="score-cell"><strong>80%</strong><div class="mini-bar"><span style="width:80%"></span></div></div></td><td><span class="status-badge status-high">Largely achieved directionally</span></td><td>Gujarat became strongly associated with early solar and renewable expansion.</td><td>Renewable growth did not eliminate fossil dependence.</td></tr>
+            <tr><td>Create a replicable climate-governance model</td><td><div class="score-cell"><strong>50%</strong><div class="mini-bar"><span style="width:50%"></span></div></div></td><td><span class="status-badge status-low">Mixed</span></td><td>The governance narrative influenced later political and policy storytelling.</td><td>Replication depends on state-specific geography, institutions, and finances.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <section class="panel">
       <h2>Concise page overview</h2>
@@ -88,6 +107,33 @@
     pageJumpButton.addEventListener('click', goToPage);
     pageJumpInput.addEventListener('keydown', e => { if (e.key==='Enter') goToPage(); });
     renderResults([], '');
+
+    const BACKGROUNDS = [
+      'assets/priestking.jpg',
+      'assets/Mudiji.jpg',
+      'assets/glasses.jpg',
+      'assets/muditiger2.png'
+    ];
+    const bgEl = document.querySelector('.climate-book-bg');
+    if (bgEl) {
+      const storageKey = 'convenientActionBackgroundChoice';
+      let chosen = null;
+      try { chosen = sessionStorage.getItem(storageKey); } catch (e) {}
+      if (!chosen || !BACKGROUNDS.includes(chosen)) {
+        chosen = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+        try { sessionStorage.setItem(storageKey, chosen); } catch (e) {}
+      }
+      const preloader = new Image();
+      preloader.onload = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(18, 30, 28, 0.68), rgba(18, 30, 28, 0.68)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.onerror = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(18, 30, 28, 0.68), rgba(18, 30, 28, 0.68)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.src = chosen;
+    }
   </script>
 </body>
 </html>

@@ -98,3 +98,36 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .status-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 .status-table th, .status-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
 .status-table th { background: #f8fafc; }
+
+.climate-bg-body .panel,
+.climate-bg-body .hero-book { backdrop-filter: blur(7px); }
+.climate-bg-body .panel { background: rgba(255,255,255,0.92); }
+.climate-bg-body .hero-book { background: linear-gradient(135deg, rgba(23,73,64,0.88), rgba(48,100,86,0.86)); }
+.score-panel h2 { margin-bottom: 8px; }
+.overall-score-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: center;
+  background: linear-gradient(135deg, #f4fbf7, #eef7f4);
+  border: 1px solid #d7ebe3;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 16px 0 20px;
+}
+.score-label { color: #47685f; font-size: 0.95rem; text-transform: uppercase; letter-spacing: .05em; }
+.score-big { font-size: 3rem; font-weight: 800; color: #174940; line-height: 1; margin-top: 8px; }
+.score-explainer { color: #425b54; line-height: 1.7; }
+.professional-status-table { background: white; border-radius: 14px; overflow: hidden; }
+.professional-status-table th { background: #eef6f3; color: #23423a; }
+.professional-status-table tr:hover td { background: #fafdfc; }
+.score-cell { min-width: 120px; }
+.mini-bar { margin-top: 7px; height: 8px; background: #e6eeeb; border-radius: 999px; overflow: hidden; }
+.mini-bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #2d6a5b, #4a9b84); }
+.status-badge { display: inline-block; padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; }
+.status-high { background: #dff4ea; color: #1b5e49; }
+.status-mid { background: #fff0d8; color: #8a5a00; }
+.status-low { background: #eceef3; color: #4f5562; }
+@media (max-width: 900px) {
+  .overall-score-card { grid-template-columns: 1fr; }
+}
