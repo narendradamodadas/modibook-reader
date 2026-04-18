@@ -455,6 +455,17 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .authorship-table td {
   line-height: 1.6;
 }
+.date-main {
+  font-weight: 600;
+}
+.date-notes {
+  margin-top: 4px;
+  color: #6a7681;
+  font-size: 0.9rem;
+}
+.date-notes a {
+  color: #6a7681;
+}
 .score-stack {
   min-width: 120px;
 }

@@ -48,10 +48,10 @@
         <label class="analysis-control">
           <span>Sort by</span>
           <select id="sort-select">
+            <option value="date-asc">Original publication date: oldest first</option>
+            <option value="date-desc">Original publication date: newest first</option>
             <option value="score-desc">Score: highest first</option>
             <option value="score-asc">Score: lowest first</option>
-            <option value="year-asc">Year: oldest first</option>
-            <option value="year-desc">Year: newest first</option>
             <option value="title-asc">Title: A → Z</option>
           </select>
         </label>
@@ -74,6 +74,7 @@
         <thead>
           <tr>
             <th>Book</th>
+            <th>Publication language</th>
             <th>Original publication date / status</th>
             <th>Direct-authorship estimate</th>
             <th>Reasons for / against plagiarism concern</th>
@@ -81,9 +82,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-title="Sangharsh ma Gujarat" data-year="1978" data-score="95" data-band="high" data-search="sangharsh ma gujarat gujarat during the emergency first published 1978 original gujarati foundational memoir political narrative archive edition">
+          <tr data-title="Sangharsh ma Gujarat" data-sortdate="19780114" data-score="95" data-band="high" data-search="sangharsh ma gujarat gujarat during the emergency original gujarati foundational memoir political narrative archive edition gujarati">
             <td><strong>Sangharsh ma Gujarat</strong></td>
-            <td>14 Jan 1978</td>
+            <td>Gujarati</td>
+            <td><div class="date-main">14 Jan 1978</div><div class="date-notes"><sup><a href="#src-7">[7]</a></sup> <sup><a href="#src-8">[8]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">95%</span>
@@ -91,11 +93,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> this is the Gujarati original, first published in 1978 and framed in the archive as the foundational Emergency-period memoir/documentary account. <strong>Residual caution:</strong> the current web edition still relies on OCR and machine translation for accessibility, but that is a presentation issue rather than an authorship red flag.</td>
-            <td><sup><a href="#src-7">[7]</a></sup> <sup><a href="#src-8">[8]</a></sup></td>
+            <td>Archive original; front matter</td>
           </tr>
-          <tr data-title="Aapatkal Me Gujarat" data-year="1978" data-score="92" data-band="high" data-search="aapatkal me gujarat 2004 hindi edition of 1978 original memoir political narrative consistent attribution archived full text scanned editions translation layers public bibliography archive edition">
+          <tr data-title="Aapatkal Me Gujarat" data-sortdate="19780114" data-score="92" data-band="high" data-search="aapatkal me gujarat hindi later edition of 1978 original memoir political narrative archive edition hindi">
             <td><strong>Aapatkal Me Gujarat</strong></td>
-            <td>14 Jan 1978 original; 2004 Hindi ed.</td>
+            <td>Hindi</td>
+            <td><div class="date-main">14 Jan 1978 original; 2004 Hindi ed.</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-2">[2]</a></sup> <sup><a href="#src-8">[8]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">92%</span>
@@ -103,11 +106,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> memoir/political narrative form, consistent long-term attribution, and an archived full text in this project. <strong>Residual caution:</strong> this row refers to the later Hindi edition of the underlying 1978 work, so the edition date and the original-authorship date are not the same thing.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-2">[2]</a></sup> <sup><a href="#src-8">[8]</a></sup></td>
+            <td>Bibliography + archive edition</td>
           </tr>
-          <tr data-title="Convenient Action" data-year="2011" data-score="88" data-band="high" data-search="convenient action policy coherent authored argument stable attribution research editorial support public bibliography archive edition">
+          <tr data-title="Convenient Action" data-sortdate="20110000" data-score="88" data-band="high" data-search="convenient action english policy authored argument stable attribution archive edition english">
             <td><strong>Convenient Action</strong></td>
-            <td>2011 (first published; exact day not confirmed)</td>
+            <td>English</td>
+            <td><div class="date-main">2011 (first published; exact day not confirmed)</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-9">[9]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">88%</span>
@@ -115,11 +119,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> named policy book, coherent authored argument, stable attribution. <strong>Residual caution:</strong> policy books often involve research and editorial support even when genuinely authored.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-3">[3]</a></sup> <sup><a href="#src-9">[9]</a></sup></td>
+            <td>Archive edition</td>
           </tr>
-          <tr data-title="Social Harmony" data-year="2014" data-score="78" data-band="mid" data-search="social harmony publicly attributed thematically consistent collected reflection material single draft monograph public bibliography archive edition">
+          <tr data-title="Social Harmony" data-sortdate="20140000" data-score="78" data-band="mid" data-search="social harmony english publicly attributed reflection material archive edition english">
             <td><strong>Social Harmony</strong></td>
-            <td>2014 listed; exact day not confirmed</td>
+            <td>English</td>
+            <td><div class="date-main">2014 listed; exact day not confirmed</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-mid">78%</span>
@@ -127,11 +132,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> publicly attributed and thematically consistent with Modi’s public writing. <strong>Caution:</strong> appears closer to collected/reflection-style material than a clearly single-draft monograph.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-4">[4]</a></sup></td>
+            <td>Archive edition</td>
           </tr>
-          <tr data-title="A Journey: Poems by Narendra Modi" data-year="2015" data-score="85" data-band="high" data-search="a journey poems by narendra modi poetry author centered genre marketed as poems translated edition published english wording public bibliography">
+          <tr data-title="A Journey: Poems by Narendra Modi" data-sortdate="20150422" data-score="85" data-band="high" data-search="a journey poems by narendra modi english translated poetry published english wording">
             <td><strong>A Journey: Poems by Narendra Modi</strong></td>
-            <td>22 Apr 2015</td>
+            <td>English (translated)</td>
+            <td><div class="date-main">22 Apr 2015</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-11">[11]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">85%</span>
@@ -139,11 +145,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> poetry is a strongly author-centered genre and the title is marketed as Modi’s poems. <strong>Caution:</strong> translated edition, so the published English wording is not purely his wording.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-11">[11]</a></sup></td>
+            <td>Bibliography dated entry</td>
           </tr>
-          <tr data-title="India's Singapore Story" data-year="2015" data-score="35" data-band="low" data-search="india's singapore story no verified plagiarism finding collaborative institutional book project solo manuscript public bibliography google books 2015-12-21">
+          <tr data-title="India's Singapore Story" data-sortdate="20151221" data-score="35" data-band="low" data-search="india's singapore story english institutional book project google books 2015-12-21 english">
             <td><strong>India's Singapore Story</strong></td>
-            <td>21 Dec 2015</td>
+            <td>English</td>
+            <td><div class="date-main">21 Dec 2015</div><div class="date-notes"><sup><a href="#src-10">[10]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-low">35%</span>
@@ -151,11 +158,12 @@
               </div>
             </td>
             <td><strong>No verified plagiarism finding found.</strong> <strong>Main caution:</strong> title and packaging suggest a more collaborative or institutional/book-project format rather than a plainly solo manuscript, so authorship confidence is low even without plagiarism evidence.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-10">[10]</a></sup></td>
+            <td>ISBN metadata</td>
           </tr>
-          <tr data-title="Jyotipunj" data-year="0" data-score="82" data-band="high" data-search="jyotipunj original year not confirmed long standing attributed title edition language mediation incomplete source verification public bibliography">
+          <tr data-title="Jyotipunj" data-sortdate="0" data-score="82" data-band="high" data-search="jyotipunj hindi original date not confirmed long standing attributed title hindi">
             <td><strong>Jyotipunj</strong></td>
-            <td>original date not confirmed</td>
+            <td>Hindi</td>
+            <td><div class="date-main">original date not confirmed</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">82%</span>
@@ -163,11 +171,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> long-standing Modi-attributed title. <strong>Caution:</strong> edition/language mediation and incomplete source verification in this review prevent a higher score.</td>
-            <td><sup><a href="#src-1">[1]</a></sup></td>
+            <td>Bibliography only</td>
           </tr>
-          <tr data-title="Exam Warriors" data-year="2018" data-score="90" data-band="high" data-search="exam warriors penguin stable author page self help advice format authored public messaging professionally edited public bibliography penguin title page 3 feb 2018">
+          <tr data-title="Exam Warriors" data-sortdate="20180203" data-score="90" data-band="high" data-search="exam warriors english penguin title page 3 feb 2018 english">
             <td><strong>Exam Warriors</strong></td>
-            <td>3 Feb 2018</td>
+            <td>English</td>
+            <td><div class="date-main">3 Feb 2018</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-11">[11]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-high">90%</span>
@@ -175,11 +184,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> explicitly sold by Penguin as a Narendra Modi book, with a stable author page and self-help/advice format consistent with authored public messaging. <strong>Caution:</strong> likely professionally edited, as most commercial books are.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-5">[5]</a></sup> <sup><a href="#src-11">[11]</a></sup></td>
+            <td>Publisher + bibliography</td>
           </tr>
-          <tr data-title="Abode of Love [Premtirth]" data-year="0" data-score="78" data-band="mid" data-search="abode of love premtirth original year not confirmed bibliographically stable translated alternate title stronger source inspection public bibliography">
+          <tr data-title="Abode of Love [Premtirth]" data-sortdate="0" data-score="78" data-band="mid" data-search="abode of love premtirth english translated original date not confirmed english">
             <td><strong>Abode of Love [Premtirth]</strong></td>
-            <td>original date not confirmed</td>
+            <td>English (translated)</td>
+            <td><div class="date-main">original date not confirmed</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-mid">78%</span>
@@ -187,11 +197,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> bibliographically stable Modi-attributed title. <strong>Caution:</strong> translated/alternate-title form means this review cannot treat the published wording as fully direct without stronger source inspection.</td>
-            <td><sup><a href="#src-1">[1]</a></sup></td>
+            <td>Bibliography only</td>
           </tr>
-          <tr data-title="Letters to Mother [Sakshi Bhaav]" data-year="0" data-score="70" data-band="mid" data-search="letters to mother sakshi bhaav original date not confirmed harpercollins letter writing selected edited translated arranged original material public bibliography harpercollins title page">
+          <tr data-title="Letters to Mother [Sakshi Bhaav]" data-sortdate="0" data-score="70" data-band="mid" data-search="letters to mother sakshi bhaav english translated original date not confirmed harpercollins english">
             <td><strong>Letters to Mother [Sakshi Bhaav]</strong></td>
-            <td>original date not confirmed</td>
+            <td>English (translated)</td>
+            <td><div class="date-main">original date not confirmed</div><div class="date-notes"><sup><a href="#src-6">[6]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-mid">70%</span>
@@ -199,11 +210,12 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> HarperCollins markets it as a Narendra Modi title and letter-writing is an author-centered genre. <strong>Caution:</strong> published form may be selected, edited, translated, or arranged from original material.</td>
-            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-6">[6]</a></sup></td>
+            <td>Publisher metadata</td>
           </tr>
-          <tr data-title="Ankh Ye Dhanya Hai [Ankh Aa Dhanya Chhe]" data-year="0" data-score="68" data-band="mid" data-search="ankh ye dhanya hai ankh aa dhanya chhe original year not confirmed established poetry title translated punjabi edition direct authorship diluted public bibliography">
+          <tr data-title="Ankh Ye Dhanya Hai [Ankh Aa Dhanya Chhe]" data-sortdate="0" data-score="68" data-band="mid" data-search="ankh ye dhanya hai ankh aa dhanya chhe punjabi translated original date not confirmed punjabi">
             <td><strong>Ankh Ye Dhanya Hai [Ankh Aa Dhanya Chhe]</strong></td>
-            <td>original date not confirmed</td>
+            <td>Punjabi (translated)</td>
+            <td><div class="date-main">original date not confirmed</div><div class="date-notes"><sup><a href="#src-1">[1]</a></sup></div></td>
             <td>
               <div class="score-stack">
                 <span class="score-pill score-mid">68%</span>
@@ -211,7 +223,7 @@
               </div>
             </td>
             <td><strong>Against concern:</strong> linked to an established Modi poetry title. <strong>Caution:</strong> this bibliography entry is for a translated Punjabi edition, so direct authorship of the exact published wording is necessarily diluted.</td>
-            <td><sup><a href="#src-1">[1]</a></sup></td>
+            <td>Bibliography only</td>
           </tr>
         </tbody>
       </table>
@@ -249,8 +261,6 @@
     </section>
 
     <section class="panel flamingo-panel">
-      <h2>Image from the Modi folder</h2>
-      <p>Bottom image added from your local Modi folder: <strong>Mudiji.jpg</strong>.</p>
       <img class="flamingo-image" src="assets/modi-flamingos.jpg" alt="Narendra Modi near flamingos in a landscaped garden setting">
     </section>
   </main>
@@ -274,8 +284,16 @@
     const compareRows = (a, b, mode) => {
       if (mode === 'score-asc') return Number(a.dataset.score) - Number(b.dataset.score);
       if (mode === 'score-desc') return Number(b.dataset.score) - Number(a.dataset.score);
-      if (mode === 'year-asc') return normalizedYear(a.dataset.year) - normalizedYear(b.dataset.year);
-      if (mode === 'year-desc') return normalizedYear(b.dataset.year) - normalizedYear(a.dataset.year);
+      if (mode === 'date-asc') {
+        const av = Number(a.dataset.sortdate || '0') || 99999999;
+        const bv = Number(b.dataset.sortdate || '0') || 99999999;
+        return av - bv;
+      }
+      if (mode === 'date-desc') {
+        const av = Number(a.dataset.sortdate || '0') || -1;
+        const bv = Number(b.dataset.sortdate || '0') || -1;
+        return bv - av;
+      }
       return a.dataset.title.localeCompare(b.dataset.title);
     };
 
