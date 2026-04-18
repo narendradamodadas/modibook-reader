@@ -33,110 +33,216 @@
       </div>
     </section>
 
+    <section class="panel analysis-controls-panel">
+      <div class="analysis-controls-head">
+        <div>
+          <h2>Title-by-title breakdown</h2>
+          <p class="section-note">You can sort the table and filter it by confidence band. Lower direct-authorship confidence does not automatically imply plagiarism concern.</p>
+        </div>
+        <div class="analysis-summary-badge"><strong id="visible-row-count">12</strong> visible titles</div>
+      </div>
+
+      <div class="analysis-controls">
+        <label class="analysis-control">
+          <span>Sort by</span>
+          <select id="sort-select">
+            <option value="score-desc">Score: highest first</option>
+            <option value="score-asc">Score: lowest first</option>
+            <option value="year-asc">Year: oldest first</option>
+            <option value="year-desc">Year: newest first</option>
+            <option value="title-asc">Title: A → Z</option>
+          </select>
+        </label>
+        <label class="analysis-control analysis-search-control">
+          <span>Filter by keyword</span>
+          <input id="analysis-search" type="search" placeholder="Search title or reason...">
+        </label>
+      </div>
+
+      <div class="filter-pills" id="band-filters">
+        <button class="filter-pill is-active" data-band="all" type="button">All</button>
+        <button class="filter-pill filter-pill-high" data-band="high" type="button">High confidence</button>
+        <button class="filter-pill filter-pill-mid" data-band="mid" type="button">Medium confidence</button>
+        <button class="filter-pill filter-pill-low" data-band="low" type="button">Lower confidence</button>
+      </div>
+    </section>
+
     <section class="panel table-wrap authorship-table-wrap">
-      <h2>Title-by-title breakdown</h2>
-      <table class="status-table authorship-table">
+      <table class="status-table authorship-table" id="authorship-table">
         <thead>
           <tr>
             <th>Book</th>
             <th>Year</th>
             <th>Direct-authorship estimate</th>
             <th>Reasons for / against plagiarism concern</th>
-            <th>Sources checked</th>
+            <th>Sources</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-title="Aapatkal Me Gujarat" data-year="2004" data-score="92" data-band="high" data-search="aapatkal me gujarat memoir political narrative consistent attribution archived full text scanned editions translation layers public bibliography archive edition">
             <td><strong>Aapatkal Me Gujarat</strong></td>
             <td>2004</td>
-            <td><span class="status-badge status-high">92%</span><div class="mini-bar"><span style="width:92%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-high">92%</span>
+                <div class="mini-bar score-bar-high"><span style="width:92%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> memoir/political narrative form, consistent long-term attribution, and an archived full text in this project. <strong>Residual caution:</strong> currently handled here through scanned editions and translation layers.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a><br><a href="aapatkal-mein-gujarat.html">Archive edition</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-2">[2]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Convenient Action" data-year="2011" data-score="88" data-band="high" data-search="convenient action policy coherent authored argument stable attribution research editorial support public bibliography archive edition">
             <td><strong>Convenient Action</strong></td>
             <td>2011</td>
-            <td><span class="status-badge status-high">88%</span><div class="mini-bar"><span style="width:88%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-high">88%</span>
+                <div class="mini-bar score-bar-high"><span style="width:88%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> named policy book, coherent authored argument, stable attribution. <strong>Residual caution:</strong> policy books often involve research and editorial support even when genuinely authored.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a><br><a href="convenient-action.html">Archive edition</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-3">[3]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Social Harmony" data-year="2014" data-score="78" data-band="mid" data-search="social harmony publicly attributed thematically consistent collected reflection material single draft monograph public bibliography archive edition">
             <td><strong>Social Harmony</strong></td>
             <td>2014</td>
-            <td><span class="status-badge status-mid">78%</span><div class="mini-bar"><span style="width:78%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-mid">78%</span>
+                <div class="mini-bar score-bar-mid"><span style="width:78%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> publicly attributed and thematically consistent with Modi’s public writing. <strong>Caution:</strong> appears closer to collected/reflection-style material than a clearly single-draft monograph.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a><br><a href="social-harmony.html">Archive edition</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-4">[4]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="A Journey: Poems by Narendra Modi" data-year="2015" data-score="85" data-band="high" data-search="a journey poems by narendra modi poetry author centered genre marketed as poems translated edition published english wording public bibliography">
             <td><strong>A Journey: Poems by Narendra Modi</strong></td>
             <td>2015</td>
-            <td><span class="status-badge status-high">85%</span><div class="mini-bar"><span style="width:85%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-high">85%</span>
+                <div class="mini-bar score-bar-high"><span style="width:85%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> poetry is a strongly author-centered genre and the title is marketed as Modi’s poems. <strong>Caution:</strong> translated edition, so the published English wording is not purely his wording.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="India's Singapore Story" data-year="2015" data-score="35" data-band="low" data-search="india's singapore story no verified plagiarism finding collaborative institutional book project solo manuscript public bibliography">
             <td><strong>India's Singapore Story</strong></td>
             <td>2015</td>
-            <td><span class="status-badge status-low">35%</span><div class="mini-bar"><span style="width:35%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-low">35%</span>
+                <div class="mini-bar score-bar-low"><span style="width:35%"></span></div>
+              </div>
+            </td>
             <td><strong>No verified plagiarism finding found.</strong> <strong>Main caution:</strong> title and packaging suggest a more collaborative or institutional/book-project format rather than a plainly solo manuscript, so authorship confidence is low even without plagiarism evidence.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Jyotipunj" data-year="2015" data-score="82" data-band="high" data-search="jyotipunj long standing attributed title edition language mediation incomplete source verification public bibliography">
             <td><strong>Jyotipunj</strong></td>
             <td>2015 edition</td>
-            <td><span class="status-badge status-high">82%</span><div class="mini-bar"><span style="width:82%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-high">82%</span>
+                <div class="mini-bar score-bar-high"><span style="width:82%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> long-standing Modi-attributed title. <strong>Caution:</strong> edition/language mediation and incomplete source verification in this review prevent a higher score.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Mann Ki Baat: A Social Revolution on Radio" data-year="2017" data-score="45" data-band="low" data-search="mann ki baat social revolution on radio no verified plagiarism speech derived curated excerpted editorially assembled public bibliography">
             <td><strong>Mann Ki Baat: A Social Revolution on Radio</strong></td>
             <td>2017</td>
-            <td><span class="status-badge status-low">45%</span><div class="mini-bar"><span style="width:45%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-low">45%</span>
+                <div class="mini-bar score-bar-low"><span style="width:45%"></span></div>
+              </div>
+            </td>
             <td><strong>No verified plagiarism finding found.</strong> <strong>Main caution:</strong> radio/speech-derived books are often curated, excerpted, and editorially assembled, so low direct-authorship confidence does not imply copying.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="President Pranab Mukherjee: A Statesman" data-year="2018" data-score="42" data-band="low" data-search="president pranab mukherjee a statesman no verified plagiarism tribute style translated packaging mediated publication public bibliography">
             <td><strong>President Pranab Mukherjee: A Statesman</strong></td>
             <td>2018</td>
-            <td><span class="status-badge status-low">42%</span><div class="mini-bar"><span style="width:42%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-low">42%</span>
+                <div class="mini-bar score-bar-low"><span style="width:42%"></span></div>
+              </div>
+            </td>
             <td><strong>No verified plagiarism finding found.</strong> <strong>Main caution:</strong> tribute-style and translated packaging make this look more like a mediated publication than a simple solo-authored book.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Exam Warriors" data-year="2018" data-score="90" data-band="high" data-search="exam warriors penguin stable author page self help advice format authored public messaging professionally edited public bibliography penguin title page">
             <td><strong>Exam Warriors</strong></td>
             <td>2018</td>
-            <td><span class="status-badge status-high">90%</span><div class="mini-bar"><span style="width:90%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-high">90%</span>
+                <div class="mini-bar score-bar-high"><span style="width:90%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> explicitly sold by Penguin as a Narendra Modi book, with a stable author page and self-help/advice format consistent with authored public messaging. <strong>Caution:</strong> likely professionally edited, as most commercial books are.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a><br><a href="https://www.penguin.co.in/book/exam-warriors/">Penguin title page</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-5">[5]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Abode of Love [Premtirth]" data-year="2018" data-score="78" data-band="mid" data-search="abode of love premtirth bibliographically stable translated alternate title stronger source inspection public bibliography">
             <td><strong>Abode of Love [Premtirth]</strong></td>
             <td>2018</td>
-            <td><span class="status-badge status-mid">78%</span><div class="mini-bar"><span style="width:78%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-mid">78%</span>
+                <div class="mini-bar score-bar-mid"><span style="width:78%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> bibliographically stable Modi-attributed title. <strong>Caution:</strong> translated/alternate-title form means this review cannot treat the published wording as fully direct without stronger source inspection.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Letters to Mother [Sakshi Bhaav]" data-year="2020" data-score="70" data-band="mid" data-search="letters to mother sakshi bhaav harpercollins letter writing selected edited translated arranged original material public bibliography harpercollins title page">
             <td><strong>Letters to Mother [Sakshi Bhaav]</strong></td>
             <td>2020</td>
-            <td><span class="status-badge status-mid">70%</span><div class="mini-bar"><span style="width:70%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-mid">70%</span>
+                <div class="mini-bar score-bar-mid"><span style="width:70%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> HarperCollins markets it as a Narendra Modi title and letter-writing is an author-centered genre. <strong>Caution:</strong> published form may be selected, edited, translated, or arranged from original material.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a><br><a href="https://harpercollins.co.in/product/letters-to-mother/">HarperCollins title page</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup> <sup><a href="#src-6">[6]</a></sup></td>
           </tr>
-          <tr>
+          <tr data-title="Ankh Ye Dhanya Hai [Ankh Aa Dhanya Chhe]" data-year="2024" data-score="68" data-band="mid" data-search="ankh ye dhanya hai ankh aa dhanya chhe established poetry title translated punjabi edition direct authorship diluted public bibliography">
             <td><strong>Ankh Ye Dhanya Hai [Ankh Aa Dhanya Chhe]</strong></td>
             <td>2024 Punjabi edition</td>
-            <td><span class="status-badge status-mid">68%</span><div class="mini-bar"><span style="width:68%"></span></div></td>
+            <td>
+              <div class="score-stack">
+                <span class="score-pill score-mid">68%</span>
+                <div class="mini-bar score-bar-mid"><span style="width:68%"></span></div>
+              </div>
+            </td>
             <td><strong>Against concern:</strong> linked to an established Modi poetry title. <strong>Caution:</strong> this bibliography entry is for a translated Punjabi edition, so direct authorship of the exact published wording is necessarily diluted.</td>
-            <td><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Public bibliography</a></td>
+            <td><sup><a href="#src-1">[1]</a></sup></td>
           </tr>
         </tbody>
       </table>
+      <p id="analysis-empty" class="analysis-empty" hidden>No titles match the current filter.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Source notes</h2>
+      <ol class="source-notes">
+        <li id="src-1"><a href="https://en.wikipedia.org/wiki/Bibliography_of_Narendra_Modi">Bibliography of Narendra Modi</a> — used for the 12-book public attribution baseline and basic title/year checks.</li>
+        <li id="src-2"><a href="aapatkal-mein-gujarat.html">Archive edition: Aapatkal Mein Gujarat</a> — used as a direct local reference for the scanned/translated edition in this archive.</li>
+        <li id="src-3"><a href="convenient-action.html">Archive edition: Convenient Action</a> — used as a direct local reference for the policy book already archived here.</li>
+        <li id="src-4"><a href="social-harmony.html">Archive edition: Social Harmony</a> — used as a direct local reference for the archived collection.</li>
+        <li id="src-5"><a href="https://www.penguin.co.in/book/exam-warriors/">Penguin India: Exam Warriors</a> — used as a publisher-level direct-credit example.</li>
+        <li id="src-6"><a href="https://harpercollins.co.in/product/letters-to-mother/">HarperCollins India: Letters to Mother</a> — used as a publisher-level direct-credit example.</li>
+      </ol>
     </section>
 
     <section class="panel">
       <h2>Reading the plagiarism column carefully</h2>
-      <p>This review did <strong>not</strong> find a clearly sourced confirmed plagiarism ruling for the bibliography above. So the table’s final column is mostly about <em>why plagiarism concern stays low</em> and <em>why direct-authorship confidence can still vary</em>. Those are different judgments. Translation, curation, adaptation, and editorial packaging can lower confidence in straightforward solo authorship without amounting to plagiarism.</p>
+      <p>This review did <strong>not</strong> find a clearly sourced confirmed plagiarism ruling for the bibliography above. So the reasons column is mostly about <em>why plagiarism concern stays low</em> and <em>why direct-authorship confidence can still vary</em>. Those are different judgments. Translation, curation, adaptation, and editorial packaging can lower confidence in straightforward solo authorship without amounting to plagiarism.</p>
     </section>
 
     <section class="panel flamingo-panel">
@@ -145,5 +251,60 @@
       <img class="flamingo-image" src="assets/modi-flamingos.jpg" alt="Narendra Modi near flamingos in a landscaped garden setting">
     </section>
   </main>
+
+  <script>
+    const table = document.getElementById('authorship-table');
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const sortSelect = document.getElementById('sort-select');
+    const searchInput = document.getElementById('analysis-search');
+    const filterButtons = Array.from(document.querySelectorAll('#band-filters .filter-pill'));
+    const visibleCount = document.getElementById('visible-row-count');
+    const emptyState = document.getElementById('analysis-empty');
+    let activeBand = 'all';
+
+    const normalizedYear = (value) => {
+      const match = String(value).match(/\d{4}/);
+      return match ? Number(match[0]) : 0;
+    };
+
+    const compareRows = (a, b, mode) => {
+      if (mode === 'score-asc') return Number(a.dataset.score) - Number(b.dataset.score);
+      if (mode === 'score-desc') return Number(b.dataset.score) - Number(a.dataset.score);
+      if (mode === 'year-asc') return normalizedYear(a.dataset.year) - normalizedYear(b.dataset.year);
+      if (mode === 'year-desc') return normalizedYear(b.dataset.year) - normalizedYear(a.dataset.year);
+      return a.dataset.title.localeCompare(b.dataset.title);
+    };
+
+    const updateTable = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      const sorted = [...rows].sort((a, b) => compareRows(a, b, sortSelect.value));
+      sorted.forEach((row) => tbody.appendChild(row));
+
+      let shown = 0;
+      sorted.forEach((row) => {
+        const bandOk = activeBand === 'all' || row.dataset.band === activeBand;
+        const queryOk = !query || row.dataset.search.includes(query);
+        const show = bandOk && queryOk;
+        row.hidden = !show;
+        if (show) shown += 1;
+      });
+
+      visibleCount.textContent = shown;
+      emptyState.hidden = shown !== 0;
+    };
+
+    sortSelect.addEventListener('change', updateTable);
+    searchInput.addEventListener('input', updateTable);
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeBand = button.dataset.band;
+        filterButtons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
+        updateTable();
+      });
+    });
+
+    updateTable();
+  </script>
 </body>
 </html>
