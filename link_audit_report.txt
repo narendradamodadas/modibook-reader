@@ -1,0 +1,4 @@
+sangharsh-ma-gujarat.html | ${item.url} | /home/hermes/projects/foldable-origami-model/modibook-site/${item.url}
+aapatkal-mein-gujarat.html | ${item.url} | /home/hermes/projects/foldable-origami-model/modibook-site/${item.url}
+social-harmony.html | ${item.url} | /home/hermes/projects/foldable-origami-model/modibook-site/${item.url}
+convenient-action.html | ${item.url} | /home/hermes/projects/foldable-origami-model/modibook-site/${item.url}
