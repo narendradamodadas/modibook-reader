@@ -832,3 +832,121 @@ p { line-height: 1.7; margin: 0 0 1em; }
     text-align: left;
   }
 }
+
+
+.poverty-hero {
+  background: linear-gradient(135deg, #25364b, #33536f 45%, #6a5130 100%);
+}
+.poverty-wrap {
+  max-width: 1320px;
+}
+.poverty-method-panel,
+.poverty-panel {
+  margin-bottom: 24px;
+}
+.poverty-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.poverty-legend {
+  margin-bottom: 12px;
+}
+.poverty-series-pill {
+  background: #f3efe2;
+  color: #72531c;
+}
+.poverty-series-pill .legend-dot {
+  background: #8d6a22;
+}
+.mpi-series-pill {
+  background: #ede7fb;
+  color: #5b3db5;
+}
+.mpi-series-pill .legend-dot {
+  background: #6d4dd6;
+}
+.mpi-projected-pill {
+  background: #f6eefc;
+  color: #7b3f95;
+}
+.mpi-projected-pill .legend-dot {
+  background: #a257c4;
+}
+.gov-vajpayee-pill {
+  background: #f7f0dd;
+  color: #8b6417;
+}
+.gov-vajpayee-pill .legend-dot {
+  background: rgba(206,164,61,0.9);
+}
+.gov-upa-pill {
+  background: #eaf2ff;
+  color: #2f5faa;
+}
+.gov-upa-pill .legend-dot {
+  background: rgba(90,129,193,0.9);
+}
+.gov-nda-pill {
+  background: #fdeee4;
+  color: #a0541d;
+}
+.gov-nda-pill .legend-dot {
+  background: rgba(214,128,61,0.9);
+}
+.gov-band {
+  opacity: 0.35;
+}
+.vajpayee-band {
+  fill: #ead397;
+}
+.upa-band {
+  fill: #b7ccef;
+}
+.nda-band {
+  fill: #f0c09c;
+}
+.gov-band-label {
+  font-size: 12px;
+  font-weight: 800;
+  fill: #33414d;
+  text-anchor: middle;
+}
+.poverty-line {
+  stroke: #8d6a22;
+}
+.poverty-points circle {
+  fill: #8d6a22;
+}
+.mpi-line {
+  stroke: #6d4dd6;
+}
+.mpi-points circle {
+  fill: #6d4dd6;
+}
+.mpi-points .projected-point {
+  fill: #a257c4;
+}
+.chart-value-label {
+  font-size: 12px;
+  font-weight: 700;
+  fill: #263544;
+}
+.chart-value-label-end {
+  text-anchor: end;
+}
+.poverty-footnote {
+  margin-top: 6px;
+}
+.chart-end-label {
+  text-anchor: end;
+}
+@media (max-width: 900px) {
+  .poverty-note-grid {
+    grid-template-columns: 1fr;
+  }
+  .gov-band-label,
+  .chart-value-label {
+    font-size: 11px;
+  }
+}
