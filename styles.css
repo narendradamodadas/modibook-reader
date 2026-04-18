@@ -359,3 +359,47 @@ p { line-height: 1.7; margin: 0 0 1em; }
 @media (max-width: 900px) {
   .confidence-layout { grid-template-columns: 1fr; }
 }
+
+.stat-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.stat-card-link:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  border-color: rgba(190,135,40,0.5);
+}
+.stat-cta {
+  margin-top: 14px;
+  font-weight: 700;
+  color: #8a5a00;
+}
+.analysis-wrap {
+  max-width: 1280px;
+}
+.analysis-hero {
+  background: linear-gradient(135deg, #4a3321, #8a5e36);
+}
+.authorship-table-wrap {
+  overflow-x: auto;
+}
+.authorship-table {
+  min-width: 980px;
+}
+.authorship-table td {
+  line-height: 1.55;
+}
+.flamingo-panel {
+  text-align: center;
+}
+.flamingo-image {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 14px auto 0;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+}
