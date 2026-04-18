@@ -11,8 +11,8 @@
     <header class="hero hero-home terrorism-hero">
       <div class="hero-copy">
         <div class="eyebrow">Security comparison tab</div>
-        <h1>Terror attacks in India: stitched historical trend and ideology share</h1>
-        <p class="lead">I rebuilt this page with multiple sources. There is still no single, clean, machine-readable nationwide series that gives India terror-attack counts on exactly the same definition from 1947 to 2026. So this page now uses a stitched trend for the main count graph and keeps a separate, stricter attribution-share graph for the GTD-derived 1+ death subset.</p>
+        <h1>Terror attacks in India: reconstructed trend and ideology share</h1>
+        <p class="lead">I rebuilt this page again so the SATP portion really follows the SATP incidents series. The main count graph now uses Wikipedia's annual incidents table for 1970–1999 and SATP's incidents series for 2000–2026. I still did not find a dependable annual nationwide series for 1947–1969 that I trust enough to hard-code as official-looking numbers, so that earliest span remains explicitly marked as unavailable rather than guessed.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html">Back to archive home</a>
           <a class="button" href="india-poverty-trends.html">Poverty tab</a>
@@ -27,18 +27,18 @@
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Method</div>
-          <h2>What changed</h2>
+          <h2>How the main count graph is stitched now</h2>
         </div>
-        <p class="section-note">You asked for different sources to be incorporated from 1947 to 2026. I therefore switched the first graph to a stitched source approach instead of relying only on the earlier GTD-derived mirror. The tradeoff is that the main count graph is now best read as a historical trend assembled from multiple sources rather than one perfectly uniform dataset.</p>
+        <p class="section-note">You pointed out that the earlier plotted values did not visibly follow the SATP incidents page. That was fair. I therefore rebuilt the first graph so SATP is used directly for the full 2000–2026 range, while Wikipedia is only used for 1970–1999. The GTD-derived mirror is now used only for the separate share graph below.</p>
       </div>
       <div class="poverty-note-grid">
         <article class="confidence-card confidence-positive">
           <h3>Main count graph</h3>
-          <p>The first graph now combines <strong>Wikipedia's annual incidents table</strong> for 1970–2018 with <strong>SATP's terrorism-related incidents series</strong> for 2019–2026. I did this because it extends the visible trend much later than the earlier page. For 1947–1969 I still did not find a comparably structured annual nationwide source I trust enough to turn into a hard numeric series, so that segment remains marked as unavailable rather than invented.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></p>
+          <p>1970–1999 comes from Wikipedia's annual incidents table. 2000–2026 comes directly from SATP's incidents series. 1947–1969 remains a clearly marked no-data zone because I have not found a nationwide annual series for those years that is comparable enough to the later sources.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></p>
         </article>
         <article class="confidence-card confidence-caution">
-          <h3>Religion / ideology share graph</h3>
-          <p>The second graph remains separate and stricter. It still uses the GTD-derived India incident mirror filtered to attacks with at least one death and then classifies attributed perpetrator labels into broad ideology / religion buckets. That share graph therefore remains best interpreted for the 1979–2016 span covered by that source.<sup><a href="#src-3">[3]</a></sup><sup><a href="#src-4">[4]</a></sup></p>
+          <h3>Share graph</h3>
+          <p>The religion / ideology share graph is a different thing. It remains based on the stricter GTD-derived 1+ death subset, so it still covers only the years supported by that source. I keep it separate so I do not pretend the stitched count graph and the share graph come from the same dataset.<sup><a href="#src-3">[3]</a></sup><sup><a href="#src-4">[4]</a></sup></p>
         </article>
       </div>
     </section>
@@ -49,12 +49,12 @@
           <div class="eyebrow stat-eyebrow">Graph 1</div>
           <h2>Historical attack / incident frequency on a 1947–2026 axis</h2>
         </div>
-        <p class="section-note">Grey band = no dependable annual nationwide series I was willing to hard-code. Red segment = Wikipedia annual incident table (1970–2018). Blue segment = SATP terrorism-related incidents (2019–2026).</p>
+        <p class="section-note">Grey band = no dependable annual nationwide series located. Red line = Wikipedia annual incidents table (1970–1999). Blue line = SATP incidents series (2000–2026).</p>
       </div>
       <div class="party-sum-legend poverty-legend">
         <span class="legend-pill terror-pill"><span class="legend-dot terror-dot" style="background:#d7dce2"></span>No reliable annual series located</span>
-        <span class="legend-pill terror-pill"><span class="legend-dot terror-dot" style="background:#9f2d2f"></span>Wikipedia annual incidents (1970–2018)</span>
-        <span class="legend-pill terror-pill"><span class="legend-dot terror-dot" style="background:#326cb3"></span>SATP incidents (2019–2026)</span>
+        <span class="legend-pill terror-pill"><span class="legend-dot terror-dot" style="background:#9f2d2f"></span>Wikipedia annual incidents (1970–1999)</span>
+        <span class="legend-pill terror-pill"><span class="legend-dot terror-dot" style="background:#326cb3"></span>SATP incidents (2000–2026)</span>
       </div>
       <div class="party-time-chart-wrap responsive-chart-wrap">
         <svg class="party-time-chart responsive-chart" viewBox="0 0 1040 320" role="img" aria-label="Historical terror incidents in India using multiple sources from 1947 to 2026">
@@ -73,7 +73,7 @@
           <text x="40" y="181.4" class="chart-y-label">1000</text>
           <text x="40" y="130.1" class="chart-y-label">1500</text>
           <text x="40" y="78.8" class="chart-y-label">2000</text>
-          <text x="40" y="48" class="chart-y-label">2300</text>
+          <text x="40" y="48" class="chart-y-label">4500</text>
           <text x="80" y="302" class="chart-x-label">1947</text>
           <text x="224.8" y="302" class="chart-x-label">1960</text>
           <text x="336.2" y="302" class="chart-x-label">1970</text>
@@ -83,15 +83,15 @@
           <text x="781.8" y="302" class="chart-x-label">2010</text>
           <text x="893.2" y="302" class="chart-x-label">2020</text>
           <text x="960" y="302" class="chart-x-label chart-x-label-end">2026</text>
-          <polyline class="chart-line terror-count-line" style="stroke:#9f2d2f" points="336.2,280.0 347.3,280.0 358.5,279.9 369.6,280.0 380.8,280.0 391.9,279.9 403.0,279.9 414.2,279.9 425.3,280.0 436.5,277.9 447.6,279.0 458.7,278.4 469.9,278.7 481.0,275.2 492.2,263.7 503.3,276.0 514.4,270.1 525.6,263.0 536.7,243.3 547.8,246.8 559.0,244.2 570.1,245.2 581.3,255.7 592.4,275.7 603.5,269.0 614.7,261.6 625.8,258.1 637.0,260.2 648.1,273.7 659.2,268.5 670.4,261.5 681.5,256.0 692.7,261.1 703.8,259.9 714.9,268.9 726.1,265.0 737.2,262.9 748.4,264.7 759.5,225.2 770.6,211.0 781.8,212.0 792.9,213.8 804.1,217.3 815.2,208.8 826.3,191.8 837.5,189.3 848.6,174.8 859.7,177.4 870.9,203.2"></polyline>
-          <polyline class="chart-line terror-count-line" style="stroke:#326cb3" points="882.0,96.7 893.2,133.2 904.3,103.1 915.4,125.8 926.6,118.1 937.7,117.2 948.9,49.4 960.0,225.5"></polyline>
-          <text x="336.2" y="268.0" class="chart-value-label">1970 · first annual table point</text>
-          <text x="870.9" y="191.2" class="chart-value-label">2018 · Wikipedia table ends</text>
-          <text x="882.0" y="84.7" class="chart-value-label">2019 · SATP series begins</text>
-          <text x="960.0" y="213.5" class="chart-value-label chart-value-label-end">2026 · SATP latest point</text>
+          <polyline class="chart-line terror-count-line" style="stroke:#9f2d2f" points="336.2,280.0 347.3,280.0 358.5,279.9 369.6,280.0 380.8,280.0 391.9,279.9 403.0,279.9 414.2,279.9 425.3,280.0 436.5,278.9 447.6,279.5 458.7,279.2 469.9,279.3 481.0,277.5 492.2,271.6 503.3,277.9 514.4,274.9 525.6,271.3 536.7,261.2 547.8,262.9 559.0,261.6 570.1,262.2 581.3,267.5 592.4,277.8 603.5,274.4 614.7,270.6 625.8,268.8 637.0,269.8 648.1,276.8 659.2,274.1"></polyline>
+          <polyline class="chart-line terror-count-line" style="stroke:#326cb3" points="670.4,120.9 681.5,44.0 692.7,70.8 703.8,63.4 714.9,93.5 726.1,64.0 737.2,90.1 748.4,85.1 759.5,109.6 770.6,91.9 781.8,91.8 792.9,130.8 804.1,115.5 815.2,143.7 826.3,113.9 837.5,134.3 848.6,154.0 859.7,168.1 870.9,168.5 882.0,186.0 893.2,204.7 904.3,189.2 915.4,200.9 926.6,196.9 937.7,196.5 948.9,161.7 960.0,252.0"></polyline>
+          <text x="336.2" y="268.0" class="chart-value-label">1970 · Wikipedia annual table starts</text>
+          <text x="659.2" y="262.1" class="chart-value-label">1999 · last Wikipedia year used</text>
+          <text x="670.4" y="108.9" class="chart-value-label">2000 · SATP starts here</text>
+          <text x="960.0" y="240.0" class="chart-value-label chart-value-label-end">2026 · SATP latest point</text>
         </svg>
       </div>
-      <div class="poverty-footnote muted">This first graph is intentionally stitched from multiple sources to extend the visible series toward both the earlier and later years you asked for. It is therefore a historical trend line, not a single-uniform-dataset series.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></div>
+      <div class="poverty-footnote muted">This first graph now follows SATP directly from 2000 onward. The earlier red segment is only the 1970–1999 Wikipedia annual incidents table. I still do not have a defendable annual nationwide count series for 1947–1969.<sup><a href="#src-1">[1]</a></sup><sup><a href="#src-2">[2]</a></sup></div>
     </section>
 
     <section class="panel terrorism-panel">
@@ -145,8 +145,8 @@
     <section class="panel">
       <h2>Source notes</h2>
       <ol class="source-notes">
-        <li id="src-1"><a href="https://en.wikipedia.org/wiki/List_of_terrorist_incidents_in_India">Wikipedia: List of terrorist incidents in India</a> — used here for the annual incidents table spanning 1970–2018.</li>
-        <li id="src-2"><a href="https://www.satp.org/datasheet-terrorist-attack/incidents-data/india">SATP: terrorism-related incidents data for India</a> — used here for the annual incidents series from 2019 onward to extend the count graph through 2026.</li>
+        <li id="src-1"><a href="https://en.wikipedia.org/wiki/List_of_terrorist_incidents_in_India">Wikipedia: List of terrorist incidents in India</a> — used here only for the annual incidents table spanning 1970–1999.</li>
+        <li id="src-2"><a href="https://www.satp.org/datasheet-terrorist-attack/incidents-data/india">SATP: terrorism-related incidents data for India</a> — used directly here for the annual incidents series from 2000 through 2026.</li>
         <li id="src-3"><a href="https://github.com/iaayush/Global-Terrorism-Database/blob/master/gtd_final.csv">Public GTD-derived GitHub mirror used here for the share graph</a> — used only for the attributed 1+ death subset that powers the religion / ideology share view.</li>
         <li id="src-4"><a href="https://www.start.umd.edu/gtd/">Global Terrorism Database (START / University of Maryland)</a> — official GTD project page, cited as the underlying database family for the GTD-derived mirror used above.</li>
       </ol>
