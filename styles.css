@@ -583,7 +583,7 @@ p { line-height: 1.7; margin: 0 0 1em; }
   margin: 6px 0 10px;
 }
 .party-sum-difference {
-  min-width: 300px;
+  min-width: 330px;
   text-align: right;
   font-weight: 700;
   color: #223244;
@@ -625,15 +625,45 @@ p { line-height: 1.7; margin: 0 0 1em; }
   background: #fff2d9;
   color: #8b4b07;
 }
-.bjp-pill .legend-dot {
+.bjp-pill .legend-dot,
+.bjp-line,
+.bjp-points circle {
   background: #d87d17;
+  fill: #d87d17;
+  stroke: #d87d17;
 }
 .congress-pill {
   background: #e8f1ff;
   color: #1f5ca9;
 }
-.congress-pill .legend-dot {
+.congress-pill .legend-dot,
+.congress-line,
+.congress-points circle {
   background: #2870c9;
+  fill: #2870c9;
+  stroke: #2870c9;
+}
+.tmc-pill {
+  background: #eef9ee;
+  color: #247a3d;
+}
+.tmc-pill .legend-dot,
+.tmc-line,
+.tmc-points circle {
+  background: #2ea44f;
+  fill: #2ea44f;
+  stroke: #2ea44f;
+}
+.dmk-pill {
+  background: #ffe9ec;
+  color: #b32645;
+}
+.dmk-pill .legend-dot,
+.dmk-line,
+.dmk-points circle {
+  background: #d64061;
+  fill: #d64061;
+  stroke: #d64061;
 }
 .party-time-chart-wrap {
   overflow-x: auto;
@@ -655,25 +685,13 @@ p { line-height: 1.7; margin: 0 0 1em; }
 }
 .chart-line {
   fill: none;
-  stroke-width: 4;
+  stroke-width: 3.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-.bjp-line {
-  stroke: #d87d17;
-}
-.congress-line {
-  stroke: #2870c9;
 }
 .chart-points circle {
   stroke: #fff;
   stroke-width: 2;
-}
-.bjp-points circle {
-  fill: #d87d17;
-}
-.congress-points circle {
-  fill: #2870c9;
 }
 .chart-y-label,
 .chart-x-label {
@@ -693,10 +711,17 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .congress-end-label {
   fill: #1f5ca9;
 }
+.tmc-end-label {
+  fill: #247a3d;
+}
+.dmk-end-label {
+  fill: #b32645;
+}
 .party-sum-meta-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
+  margin-bottom: 18px;
 }
 .party-meta-card {
   border-radius: 18px;
@@ -709,6 +734,12 @@ p { line-height: 1.7; margin: 0 0 1em; }
 }
 .congress-meta-card {
   background: linear-gradient(135deg, #e8f1ff, #d8e7ff);
+}
+.tmc-meta-card {
+  background: linear-gradient(135deg, #eef9ee, #dcf3df);
+}
+.dmk-meta-card {
+  background: linear-gradient(135deg, #ffe9ec, #ffd7de);
 }
 .party-meta-kicker {
   text-transform: uppercase;
@@ -728,6 +759,25 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .party-meta-card p {
   margin: 0;
   color: #4d5c68;
+  line-height: 1.55;
+}
+.affidavit-provenance-panel {
+  margin-top: 8px;
+}
+.affidavit-provenance-panel h3 {
+  margin: 0 0 8px;
+}
+.provenance-table {
+  min-width: 1200px;
+}
+.provenance-table td:nth-child(1) {
+  font-weight: 800;
+}
+.provenance-table td:nth-child(3) a,
+.provenance-table td:nth-child(4) a {
+  white-space: nowrap;
+}
+.provenance-table td {
   line-height: 1.55;
 }
 .networth-table {
@@ -776,5 +826,9 @@ p { line-height: 1.7; margin: 0 0 1em; }
   }
   .party-sum-meta-grid {
     grid-template-columns: 1fr;
+  }
+  .party-sum-difference {
+    min-width: 0;
+    text-align: left;
   }
 }
