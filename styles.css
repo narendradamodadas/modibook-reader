@@ -972,3 +972,114 @@ p { line-height: 1.7; margin: 0 0 1em; }
     font-size: 11px;
   }
 }
+
+
+.terrorism-hero {
+  background: linear-gradient(135deg, #40242a, #6a2d38 45%, #313f59 100%);
+}
+.gdp-hero {
+  background: linear-gradient(135deg, #21374e, #274f67 40%, #5f5a24 100%);
+}
+.terrorism-wrap,
+.gdp-wrap {
+  max-width: 1320px;
+}
+.terrorism-panel,
+.terrorism-note-panel {
+  margin-bottom: 24px;
+}
+.terror-count-line {
+  stroke: #922b35;
+}
+.terror-count-points circle {
+  fill: #922b35;
+  stroke: #fff;
+  stroke-width: 1;
+}
+.terror-grid-note {
+  margin-top: 8px;
+}
+.terror-pill {
+  background: #f5f0ea;
+  color: #36414a;
+}
+.gdp-pill {
+  background: #eef2f7;
+  color: #33414d;
+}
+.modi-marker-pill {
+  background: #f9eee0;
+  color: #9a5a14;
+}
+.modi-marker-dot {
+  background: #d8891c;
+}
+.modi-marker-line {
+  stroke: #d8891c;
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+}
+.modi-marker-label {
+  font-size: 12px;
+  font-weight: 800;
+  fill: #9a5a14;
+}
+.gdp-line {
+  fill: none;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.gdp-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.gdp-rank-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(27,40,56,0.10);
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+.gdp-rank-line strong {
+  color: #1f2f40;
+}
+.gdp-rank-line span:last-child {
+  margin-left: auto;
+  color: #54616d;
+  font-weight: 700;
+}
+.gdp-rank-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.responsive-chart-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,245,240,0.92));
+  border: 1px solid rgba(27,40,56,0.08);
+  padding: 8px;
+}
+.chart-value-label {
+  paint-order: stroke;
+  stroke: rgba(255,255,255,0.9);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+@media (max-width: 900px) {
+  .gdp-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .modi-marker-label,
+  .gov-band-label,
+  .chart-value-label {
+    font-size: 10px;
+  }
+}
