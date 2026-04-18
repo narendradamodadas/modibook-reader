@@ -356,6 +356,19 @@ p { line-height: 1.7; margin: 0 0 1em; }
   color: #49545d;
   line-height: 1.55;
 }
+.spotlight-panel {
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #f4efe3, #fbf8f0);
+}
+.dark-button {
+  background: #18324a;
+  color: white;
+  border-color: #18324a;
+}
+.dark-button:hover {
+  background: #224763;
+  border-color: #224763;
+}
 @media (max-width: 900px) {
   .confidence-layout { grid-template-columns: 1fr; }
 }
