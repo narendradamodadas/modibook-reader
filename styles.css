@@ -522,6 +522,58 @@ p { line-height: 1.7; margin: 0 0 1em; }
   line-height: 1.65;
   color: #42505b;
 }
+.networth-wrap {
+  max-width: 1320px;
+}
+.networth-hero {
+  background: linear-gradient(135deg, #47261c, #6d3a28 40%, #25364b 100%);
+}
+.networth-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.networth-highlight {
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.bjp-highlight {
+  background: linear-gradient(135deg, #fff3df, #ffe8bf);
+}
+.congress-highlight {
+  background: linear-gradient(135deg, #e6f0fb, #dce9fb);
+}
+.contrast-highlight {
+  background: linear-gradient(135deg, #f4efe3, #f8f5ec);
+}
+.networth-kicker {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #6a5a34;
+  margin-bottom: 10px;
+}
+.networth-big {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #1b2838;
+  margin-bottom: 10px;
+}
+.networth-note {
+  color: #4c5964;
+  margin: 0;
+}
+.networth-table {
+  min-width: 1180px;
+}
+.networth-table td strong {
+  color: #1c3045;
+}
 .flamingo-panel {
   text-align: center;
 }
@@ -535,6 +587,9 @@ p { line-height: 1.7; margin: 0 0 1em; }
 }
 @media (max-width: 900px) {
   .analysis-controls {
+    grid-template-columns: 1fr;
+  }
+  .networth-banner-grid {
     grid-template-columns: 1fr;
   }
 }
