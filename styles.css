@@ -569,10 +569,22 @@ p { line-height: 1.7; margin: 0 0 1em; }
   margin: 0;
 }
 .networth-table {
-  min-width: 1180px;
+  min-width: 1280px;
 }
 .networth-table td strong {
   color: #1c3045;
+}
+.leader-thumb {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+  border: 2px solid rgba(27,40,56,0.10);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+.photo-cell {
+  width: 76px;
 }
 .flamingo-panel {
   text-align: center;
