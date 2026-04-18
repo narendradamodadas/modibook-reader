@@ -666,12 +666,13 @@ p { line-height: 1.7; margin: 0 0 1em; }
   stroke: #d64061;
 }
 .party-time-chart-wrap {
-  overflow-x: auto;
+  overflow: hidden;
   margin-bottom: 18px;
 }
 .party-time-chart {
   width: 100%;
-  min-width: 980px;
+  max-width: 100%;
+  min-width: 0;
   height: auto;
   display: block;
 }
@@ -880,6 +881,20 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .gov-vajpayee-pill .legend-dot {
   background: rgba(206,164,61,0.9);
 }
+.gov-inc-pill {
+  background: #e8eefc;
+  color: #3e5f95;
+}
+.gov-inc-pill .legend-dot {
+  background: rgba(88,119,181,0.9);
+}
+.gov-coalition-pill {
+  background: #efe9f8;
+  color: #6b4b98;
+}
+.gov-coalition-pill .legend-dot {
+  background: rgba(126,89,176,0.9);
+}
 .gov-upa-pill {
   background: #eaf2ff;
   color: #2f5faa;
@@ -897,12 +912,19 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .gov-band {
   opacity: 0.35;
 }
+.congress-era-band {
+  fill: #b7ccef;
+}
+.coalition-era-band {
+  fill: #d7c5ee;
+}
 .vajpayee-band {
   fill: #ead397;
 }
 .upa-band {
   fill: #b7ccef;
 }
+.nda-era-band,
 .nda-band {
   fill: #f0c09c;
 }

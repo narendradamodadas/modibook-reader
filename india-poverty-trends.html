@@ -11,8 +11,8 @@
     <header class="hero hero-home poverty-hero">
       <div class="hero-copy">
         <div class="eyebrow">Policy comparison tab</div>
-        <h1>Poverty in India: trend lines and ruling-party periods</h1>
-        <p class="lead">This page tracks two poverty measures for India and overlays them against the party and prime minister leading the Union government at the time. The first graph uses a World Bank poverty-headcount series with post-2011 coverage; the second uses India’s multidimensional poverty series from NITI Aayog / UNDP / OPHI. Both graphs are point-based and show the actual years used.</p>
+        <h1>Poverty in India: trend lines on a 1947–2026 timeline</h1>
+        <p class="lead">This page tracks two poverty measures for India on a common 1947–2026 timeline and places them against the party and prime minister leading the Union government. The x-axis now spans from independence to 2026, but the underlying poverty datasets do not provide a real observed value for every year; the graphs only plot sourced points where defensible data exist.</p>
         <div class="hero-actions">
           <a class="button primary" href="index.html">Back to archive home</a>
           <a class="button" href="net-worth-comparison.html">Net worth comparison</a>
@@ -27,18 +27,18 @@
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">How to read this page</div>
-          <h2>Two different poverty measures</h2>
+          <h2>Timeline span versus data availability</h2>
         </div>
-        <p class="section-note">The top graph uses a World Bank headcount series that extends to 2022 for India; the lower graph uses India’s multidimensional poverty estimates and projections discussed by NITI Aayog in 2024.</p>
+        <p class="section-note">Both graphs now span 1947–2026 so you can align them visually with political periods. But the actual sourced poverty points begin later: 1977 for the World Bank societal-poverty series used here, and 2005-06 for the multidimensional poverty series used here.</p>
       </div>
       <div class="poverty-note-grid">
         <article class="confidence-card confidence-positive">
           <h3>World Bank graph</h3>
-          <p>I use the World Bank societal poverty line headcount ratio here because it provides India data points beyond 2011 in the World Bank API. It is a single-money-metric poverty series, shown at 2004, 2009, 2011, and 2022.<sup><a href="#src-1">[1]</a></sup></p>
+          <p>I use the World Bank societal poverty line headcount ratio here because it gives a longer India time series than the national-poverty-line series in the World Bank API. The plotted point years used are 1977, 1983, 1987, 1993, 2004, 2009, 2011, and 2022.<sup><a href="#src-1">[1]</a></sup></p>
         </article>
         <article class="confidence-card confidence-caution">
           <h3>MPI graph</h3>
-          <p>The multidimensional poverty graph uses NITI Aayog’s 2024 discussion paper and related PIB releases. It includes observed values for 2005-06, 2015-16, and 2019-21, plus the NITI-discussed interpolated / projected values for 2013-14 and 2022-23.<sup><a href="#src-2">[2]</a></sup><sup><a href="#src-3">[3]</a></sup><sup><a href="#src-4">[4]</a></sup></p>
+          <p>The multidimensional poverty graph uses NITI Aayog / UNDP / OPHI-backed India MPI values. It includes observed values for 2005-06, 2015-16, and 2019-21, plus NITI Aayog’s interpolated 2013-14 and projected 2022-23 values. There is no defensible annual MPI series back to 1947, so I do not invent one.<sup><a href="#src-2">[2]</a></sup><sup><a href="#src-3">[3]</a></sup><sup><a href="#src-4">[4]</a></sup></p>
         </article>
       </div>
     </section>
@@ -47,136 +47,172 @@
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Graph 1</div>
-          <h2>World Bank poverty headcount ratio for India</h2>
+          <h2>World Bank poverty headcount ratio on a 1947–2026 timeline</h2>
         </div>
-        <p class="section-note">Series used: World Bank societal poverty line headcount ratio (% of population). Shaded bands show who led the Union government during each period.</p>
+        <p class="section-note">Series used: World Bank societal poverty line headcount ratio (% of population). Background bands show broad Union-government periods; the detailed prime-minister table below gives the full ruling breakdown.</p>
       </div>
       <div class="party-sum-legend poverty-legend">
-        <span class="legend-pill poverty-series-pill"><span class="legend-dot"></span>Poverty rate line</span>
-        <span class="legend-pill gov-upa-pill"><span class="legend-dot"></span>UPA · Manmohan Singh</span>
-        <span class="legend-pill gov-nda-pill"><span class="legend-dot"></span>NDA · Narendra Modi</span>
-        <span class="legend-pill gov-vajpayee-pill"><span class="legend-dot"></span>NDA · Atal Bihari Vajpayee</span>
+        <span class="legend-pill poverty-series-pill"><span class="legend-dot"></span>World Bank poverty rate line</span>
+        <span class="legend-pill gov-inc-pill"><span class="legend-dot"></span>Congress-led period</span>
+        <span class="legend-pill gov-coalition-pill"><span class="legend-dot"></span>Janata / coalition period</span>
+        <span class="legend-pill gov-nda-pill"><span class="legend-dot"></span>NDA period</span>
       </div>
-      <div class="party-time-chart-wrap">
-        <svg class="party-time-chart" viewBox="0 0 1040 320" role="img" aria-label="World Bank poverty headcount ratio in India with ruling-party periods">
-          <rect x="84" y="44" width="146" height="236" class="gov-band vajpayee-band"></rect>
-          <rect x="230" y="44" width="365" height="236" class="gov-band upa-band"></rect>
-          <rect x="595" y="44" width="365" height="236" class="gov-band nda-band"></rect>
-          <text x="157" y="64" class="gov-band-label">NDA · Vajpayee</text>
-          <text x="412.5" y="64" class="gov-band-label">UPA · Manmohan Singh</text>
-          <text x="777.5" y="64" class="gov-band-label">NDA · Narendra Modi</text>
+      <div class="party-time-chart-wrap responsive-chart-wrap">
+        <svg class="party-time-chart responsive-chart" viewBox="0 0 1040 320" role="img" aria-label="World Bank poverty headcount ratio in India from 1947 to 2026 with broad ruling periods">
+          <rect x="80" y="44" width="334.2" height="236" class="gov-band congress-era-band"></rect>
+          <rect x="414.2" y="44" width="233.9" height="236" class="gov-band coalition-era-band"></rect>
+          <rect x="648.1" y="44" width="66.8" height="236" class="gov-band nda-era-band"></rect>
+          <rect x="714.9" y="44" width="111.4" height="236" class="gov-band upa-band"></rect>
+          <rect x="826.3" y="44" width="133.7" height="236" class="gov-band nda-band"></rect>
+          <text x="247.1" y="62" class="gov-band-label">INC-led era</text>
+          <text x="531.1" y="62" class="gov-band-label">Janata / coalition era</text>
+          <text x="681.5" y="62" class="gov-band-label">NDA</text>
+          <text x="770.6" y="62" class="gov-band-label">UPA</text>
+          <text x="893.2" y="62" class="gov-band-label">NDA</text>
 
-          <line x1="84" y1="280" x2="960" y2="280" class="chart-axis"></line>
-          <line x1="84" y1="44" x2="84" y2="280" class="chart-axis"></line>
-          <line x1="84" y1="280" x2="960" y2="280" class="chart-grid"></line>
-          <line x1="84" y1="232.8" x2="960" y2="232.8" class="chart-grid"></line>
-          <line x1="84" y1="185.6" x2="960" y2="185.6" class="chart-grid"></line>
-          <line x1="84" y1="138.4" x2="960" y2="138.4" class="chart-grid"></line>
-          <line x1="84" y1="91.2" x2="960" y2="91.2" class="chart-grid"></line>
-          <line x1="84" y1="44" x2="960" y2="44" class="chart-grid"></line>
-          <text x="60" y="284" class="chart-y-label">0%</text>
-          <text x="52" y="236.8" class="chart-y-label">10%</text>
-          <text x="52" y="189.6" class="chart-y-label">20%</text>
-          <text x="52" y="142.4" class="chart-y-label">30%</text>
-          <text x="52" y="95.2" class="chart-y-label">40%</text>
-          <text x="52" y="48" class="chart-y-label">50%</text>
-          <text x="84" y="302" class="chart-x-label">2000</text>
-          <text x="230" y="302" class="chart-x-label">2004</text>
-          <text x="376" y="302" class="chart-x-label">2008</text>
-          <text x="522" y="302" class="chart-x-label">2012</text>
-          <text x="668" y="302" class="chart-x-label">2016</text>
-          <text x="814" y="302" class="chart-x-label">2020</text>
-          <text x="960" y="302" class="chart-x-label chart-x-label-end">2024</text>
-          <polyline class="chart-line poverty-line" points="230.0,61.0 412.5,107.7 485.5,122.4 887.0,179.5"></polyline>
+          <line x1="80" y1="280" x2="960" y2="280" class="chart-axis"></line>
+          <line x1="80" y1="44" x2="80" y2="280" class="chart-axis"></line>
+          <line x1="80" y1="280" x2="960" y2="280" class="chart-grid"></line>
+          <line x1="80" y1="243.7" x2="960" y2="243.7" class="chart-grid"></line>
+          <line x1="80" y1="207.4" x2="960" y2="207.4" class="chart-grid"></line>
+          <line x1="80" y1="171.1" x2="960" y2="171.1" class="chart-grid"></line>
+          <line x1="80" y1="134.8" x2="960" y2="134.8" class="chart-grid"></line>
+          <line x1="80" y1="98.5" x2="960" y2="98.5" class="chart-grid"></line>
+          <line x1="80" y1="62.2" x2="960" y2="62.2" class="chart-grid"></line>
+          <text x="56" y="284" class="chart-y-label">0%</text>
+          <text x="48" y="247.7" class="chart-y-label">10%</text>
+          <text x="48" y="211.4" class="chart-y-label">20%</text>
+          <text x="48" y="175.1" class="chart-y-label">30%</text>
+          <text x="48" y="138.8" class="chart-y-label">40%</text>
+          <text x="48" y="102.5" class="chart-y-label">50%</text>
+          <text x="48" y="66.2" class="chart-y-label">60%</text>
+          <text x="80" y="302" class="chart-x-label">1947</text>
+          <text x="224.8" y="302" class="chart-x-label">1960</text>
+          <text x="336.2" y="302" class="chart-x-label">1970</text>
+          <text x="447.6" y="302" class="chart-x-label">1980</text>
+          <text x="559.0" y="302" class="chart-x-label">1990</text>
+          <text x="670.4" y="302" class="chart-x-label">2000</text>
+          <text x="781.8" y="302" class="chart-x-label">2010</text>
+          <text x="893.2" y="302" class="chart-x-label">2020</text>
+          <text x="960" y="302" class="chart-x-label chart-x-label-end">2026</text>
+
+          <polyline class="chart-line poverty-line" points="414.2,63.2 481.0,95.2 525.6,91.9 592.4,107.5 714.9,111.5 770.6,147.5 792.9,158.7 915.4,202.7"></polyline>
           <g class="chart-points poverty-points">
-            <circle cx="230.0" cy="61.0" r="5"></circle>
-            <circle cx="412.5" cy="107.7" r="5"></circle>
-            <circle cx="485.5" cy="122.4" r="5"></circle>
-            <circle cx="887.0" cy="179.5" r="5"></circle>
+            <circle cx="414.2" cy="63.2" r="5"></circle>
+            <circle cx="481.0" cy="95.2" r="5"></circle>
+            <circle cx="525.6" cy="91.9" r="5"></circle>
+            <circle cx="592.4" cy="107.5" r="5"></circle>
+            <circle cx="714.9" cy="111.5" r="5"></circle>
+            <circle cx="770.6" cy="147.5" r="5"></circle>
+            <circle cx="792.9" cy="158.7" r="5"></circle>
+            <circle cx="915.4" cy="202.7" r="5"></circle>
           </g>
-          <text x="230.0" y="49.0" class="chart-value-label">2004 · 46.4%</text>
-          <text x="412.5" y="95.7" class="chart-value-label">2009 · 36.5%</text>
-          <text x="485.5" y="110.4" class="chart-value-label">2011 · 33.4%</text>
-          <text x="887.0" y="167.5" class="chart-value-label chart-value-label-end">2022 · 21.3%</text>
+          <text x="414.2" y="51.2" class="chart-value-label">1977 · 59.7%</text>
+          <text x="481.0" y="83.2" class="chart-value-label">1983 · 50.9%</text>
+          <text x="525.6" y="79.9" class="chart-value-label">1987 · 51.8%</text>
+          <text x="592.4" y="95.5" class="chart-value-label">1993 · 47.5%</text>
+          <text x="714.9" y="99.5" class="chart-value-label">2004 · 46.4%</text>
+          <text x="770.6" y="135.5" class="chart-value-label">2009 · 36.5%</text>
+          <text x="792.9" y="170.7" class="chart-value-label">2011 · 33.4%</text>
+          <text x="915.4" y="190.7" class="chart-value-label chart-value-label-end">2022 · 21.3%</text>
         </svg>
       </div>
-      <div class="poverty-footnote muted">World Bank series point years used here: 2004, 2009, 2011, 2022.<sup><a href="#src-1">[1]</a></sup></div>
+      <div class="poverty-footnote muted">Observed World Bank societal-poverty series points used here: 1977, 1983, 1987, 1993, 2004, 2009, 2011, 2022. The graph spans 1947–2026, but the plotted data do not start until 1977.<sup><a href="#src-1">[1]</a></sup></div>
     </section>
 
     <section class="panel poverty-panel">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Graph 2</div>
-          <h2>India multidimensional poverty index headcount ratio</h2>
+          <h2>India multidimensional poverty ratio on a 1947–2026 timeline</h2>
         </div>
-        <p class="section-note">Observed NITI / UNDP / OPHI MPI points are shown alongside NITI Aayog’s interpolated 2013-14 and projected 2022-23 values.</p>
+        <p class="section-note">Observed NITI / UNDP / OPHI MPI points are shown alongside NITI Aayog’s interpolated 2013-14 and projected 2022-23 values. The axis spans 1947–2026, but the sourced MPI points begin only in 2005-06.</p>
       </div>
       <div class="party-sum-legend poverty-legend">
         <span class="legend-pill mpi-series-pill"><span class="legend-dot"></span>MPI headcount ratio line</span>
         <span class="legend-pill mpi-projected-pill"><span class="legend-dot"></span>Projected / interpolated point</span>
-        <span class="legend-pill gov-upa-pill"><span class="legend-dot"></span>UPA · Manmohan Singh</span>
-        <span class="legend-pill gov-nda-pill"><span class="legend-dot"></span>NDA · Narendra Modi</span>
+        <span class="legend-pill gov-upa-pill"><span class="legend-dot"></span>UPA period</span>
+        <span class="legend-pill gov-nda-pill"><span class="legend-dot"></span>NDA period</span>
       </div>
-      <div class="party-time-chart-wrap">
-        <svg class="party-time-chart" viewBox="0 0 1040 320" role="img" aria-label="India multidimensional poverty headcount ratio with ruling-party periods">
-          <rect x="84" y="44" width="146" height="236" class="gov-band vajpayee-band"></rect>
-          <rect x="230" y="44" width="365" height="236" class="gov-band upa-band"></rect>
-          <rect x="595" y="44" width="365" height="236" class="gov-band nda-band"></rect>
-          <text x="157" y="64" class="gov-band-label">NDA · Vajpayee</text>
-          <text x="412.5" y="64" class="gov-band-label">UPA · Manmohan Singh</text>
-          <text x="777.5" y="64" class="gov-band-label">NDA · Narendra Modi</text>
+      <div class="party-time-chart-wrap responsive-chart-wrap">
+        <svg class="party-time-chart responsive-chart" viewBox="0 0 1040 320" role="img" aria-label="India multidimensional poverty ratio from 1947 to 2026 with broad ruling periods">
+          <rect x="80" y="44" width="334.2" height="236" class="gov-band congress-era-band"></rect>
+          <rect x="414.2" y="44" width="233.9" height="236" class="gov-band coalition-era-band"></rect>
+          <rect x="648.1" y="44" width="66.8" height="236" class="gov-band nda-era-band"></rect>
+          <rect x="714.9" y="44" width="111.4" height="236" class="gov-band upa-band"></rect>
+          <rect x="826.3" y="44" width="133.7" height="236" class="gov-band nda-band"></rect>
+          <text x="247.1" y="62" class="gov-band-label">INC-led era</text>
+          <text x="531.1" y="62" class="gov-band-label">Janata / coalition era</text>
+          <text x="681.5" y="62" class="gov-band-label">NDA</text>
+          <text x="770.6" y="62" class="gov-band-label">UPA</text>
+          <text x="893.2" y="62" class="gov-band-label">NDA</text>
 
-          <line x1="84" y1="280" x2="960" y2="280" class="chart-axis"></line>
-          <line x1="84" y1="44" x2="84" y2="280" class="chart-axis"></line>
-          <line x1="84" y1="280" x2="960" y2="280" class="chart-grid"></line>
-          <line x1="84" y1="240.7" x2="960" y2="240.7" class="chart-grid"></line>
-          <line x1="84" y1="201.3" x2="960" y2="201.3" class="chart-grid"></line>
-          <line x1="84" y1="162.0" x2="960" y2="162.0" class="chart-grid"></line>
-          <line x1="84" y1="122.7" x2="960" y2="122.7" class="chart-grid"></line>
-          <line x1="84" y1="83.3" x2="960" y2="83.3" class="chart-grid"></line>
-          <line x1="84" y1="44" x2="960" y2="44" class="chart-grid"></line>
-          <text x="60" y="284" class="chart-y-label">0%</text>
-          <text x="52" y="244.7" class="chart-y-label">10%</text>
-          <text x="52" y="205.3" class="chart-y-label">20%</text>
-          <text x="52" y="166.0" class="chart-y-label">30%</text>
-          <text x="52" y="126.7" class="chart-y-label">40%</text>
-          <text x="52" y="87.3" class="chart-y-label">50%</text>
-          <text x="52" y="48" class="chart-y-label">60%</text>
-          <text x="84" y="302" class="chart-x-label">2000</text>
-          <text x="230" y="302" class="chart-x-label">2004</text>
-          <text x="376" y="302" class="chart-x-label">2008</text>
-          <text x="522" y="302" class="chart-x-label">2012</text>
-          <text x="668" y="302" class="chart-x-label">2016</text>
-          <text x="814" y="302" class="chart-x-label">2020</text>
-          <text x="960" y="302" class="chart-x-label chart-x-label-end">2024</text>
-          <polyline class="chart-line mpi-line" points="266.5,62.3 558.5,165.3 631.5,182.3 777.5,221.2 887.0,235.6"></polyline>
+          <line x1="80" y1="280" x2="960" y2="280" class="chart-axis"></line>
+          <line x1="80" y1="44" x2="80" y2="280" class="chart-axis"></line>
+          <line x1="80" y1="280" x2="960" y2="280" class="chart-grid"></line>
+          <line x1="80" y1="240.7" x2="960" y2="240.7" class="chart-grid"></line>
+          <line x1="80" y1="201.3" x2="960" y2="201.3" class="chart-grid"></line>
+          <line x1="80" y1="162.0" x2="960" y2="162.0" class="chart-grid"></line>
+          <line x1="80" y1="122.7" x2="960" y2="122.7" class="chart-grid"></line>
+          <line x1="80" y1="83.3" x2="960" y2="83.3" class="chart-grid"></line>
+          <line x1="80" y1="44" x2="960" y2="44" class="chart-grid"></line>
+          <text x="56" y="284" class="chart-y-label">0%</text>
+          <text x="48" y="244.7" class="chart-y-label">10%</text>
+          <text x="48" y="205.3" class="chart-y-label">20%</text>
+          <text x="48" y="166.0" class="chart-y-label">30%</text>
+          <text x="48" y="126.7" class="chart-y-label">40%</text>
+          <text x="48" y="87.3" class="chart-y-label">50%</text>
+          <text x="48" y="48" class="chart-y-label">60%</text>
+          <text x="80" y="302" class="chart-x-label">1947</text>
+          <text x="224.8" y="302" class="chart-x-label">1960</text>
+          <text x="336.2" y="302" class="chart-x-label">1970</text>
+          <text x="447.6" y="302" class="chart-x-label">1980</text>
+          <text x="559.0" y="302" class="chart-x-label">1990</text>
+          <text x="670.4" y="302" class="chart-x-label">2000</text>
+          <text x="781.8" y="302" class="chart-x-label">2010</text>
+          <text x="893.2" y="302" class="chart-x-label">2020</text>
+          <text x="960" y="302" class="chart-x-label chart-x-label-end">2026</text>
+          <polyline class="chart-line mpi-line" points="731.6,62.3 820.8,165.3 843.0,182.3 893.2,221.2 921.0,235.6"></polyline>
           <g class="chart-points mpi-points">
-            <circle cx="266.5" cy="62.3" r="5"></circle>
-            <circle cx="558.5" cy="165.3" r="5" class="projected-point"></circle>
-            <circle cx="631.5" cy="182.3" r="5"></circle>
-            <circle cx="777.5" cy="221.2" r="5"></circle>
-            <circle cx="887.0" cy="235.6" r="5" class="projected-point"></circle>
+            <circle cx="731.6" cy="62.3" r="5"></circle>
+            <circle cx="820.8" cy="165.3" r="5" class="projected-point"></circle>
+            <circle cx="843.0" cy="182.3" r="5"></circle>
+            <circle cx="893.2" cy="221.2" r="5"></circle>
+            <circle cx="921.0" cy="235.6" r="5" class="projected-point"></circle>
           </g>
-          <text x="266.5" y="50.3" class="chart-value-label">2005-06 · 55.34%</text>
-          <text x="558.5" y="153.3" class="chart-value-label">2013-14* · 29.17%</text>
-          <text x="631.5" y="170.3" class="chart-value-label">2015-16 · 24.85%</text>
-          <text x="777.5" y="209.2" class="chart-value-label">2019-21 · 14.96%</text>
-          <text x="887.0" y="223.6" class="chart-value-label chart-value-label-end">2022-23* · 11.28%</text>
+          <text x="731.6" y="50.3" class="chart-value-label">2005-06 · 55.34%</text>
+          <text x="820.8" y="153.3" class="chart-value-label">2013-14* · 29.17%</text>
+          <text x="843.0" y="170.3" class="chart-value-label">2015-16 · 24.85%</text>
+          <text x="893.2" y="209.2" class="chart-value-label">2019-21 · 14.96%</text>
+          <text x="921.0" y="223.6" class="chart-value-label chart-value-label-end">2022-23* · 11.28%</text>
         </svg>
       </div>
-      <div class="poverty-footnote muted">* Asterisked MPI points are the interpolated / projected values used by NITI Aayog for 2013-14 and 2022-23.<sup><a href="#src-2">[2]</a></sup><sup><a href="#src-4">[4]</a></sup></div>
+      <div class="poverty-footnote muted">Observed MPI point years used here: 2005-06, 2015-16, 2019-21. NITI Aayog adds 2013-14 and 2022-23 as interpolated / projected comparison points. The graph spans 1947–2026, but the plotted MPI data do not start until 2005-06.<sup><a href="#src-2">[2]</a></sup><sup><a href="#src-4">[4]</a></sup></div>
     </section>
 
     <section class="panel">
-      <h2>Ruling-party timeline used on both graphs</h2>
+      <h2>Union-government timeline used to interpret the graphs</h2>
+      <p class="muted">This table gives the leader and party context across the full 1947–2026 span. Narrow acting-prime-minister intervals are not separately banded in the charts, but the major leadership periods are summarized here.</p>
       <table class="status-table authorship-table provenance-table">
         <thead>
-          <tr><th>Period</th><th>Ruling coalition / party</th><th>Prime minister / leader shown</th><th>Used as chart background for</th></tr>
+          <tr><th>Period</th><th>Party / coalition</th><th>Prime minister / leader</th><th>How used on this page</th></tr>
         </thead>
         <tbody>
-          <tr><td>2000 to 2004</td><td>NDA</td><td>Atal Bihari Vajpayee</td><td>Early post-2000 period until the 2004 change in government<sup><a href="#src-5">[5]</a></sup></td></tr>
-          <tr><td>2004 to 2014</td><td>UPA</td><td>Manmohan Singh</td><td>The 2004–2014 central-government period<sup><a href="#src-6">[6]</a></sup></td></tr>
-          <tr><td>2014 onward</td><td>NDA</td><td>Narendra Modi</td><td>The 2014+ central-government period shown on both graphs<sup><a href="#src-7">[7]</a></sup></td></tr>
+          <tr><td>1947–1964</td><td>INC</td><td>Jawaharlal Nehru</td><td>Shown inside the broad early Congress-led era band.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1964–1966</td><td>INC</td><td>Lal Bahadur Shastri</td><td>Included inside the broad early Congress-led era band.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1966–1977</td><td>INC</td><td>Indira Gandhi</td><td>Shown as the later part of the early Congress-led era before the first non-Congress change.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1977–1979</td><td>Janata Party</td><td>Morarji Desai</td><td>Included in the Janata / coalition era band.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1979–1980</td><td>Janata Party (Secular)</td><td>Charan Singh</td><td>Included in the Janata / coalition era band.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1980–1984</td><td>INC</td><td>Indira Gandhi</td><td>Grouped under the broad Congress-led era before 1989.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1984–1989</td><td>INC</td><td>Rajiv Gandhi</td><td>Grouped under the broad Congress-led era before 1989.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1989–1990</td><td>Janata Dal</td><td>V. P. Singh</td><td>Included in the late-1980s / 1990s coalition period.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1990–1991</td><td>Samajwadi Janata Party</td><td>Chandra Shekhar</td><td>Included in the late-1980s / 1990s coalition period.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1991–1996</td><td>INC</td><td>P. V. Narasimha Rao</td><td>Included in the 1990s pre-NDA transition period.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1996–1997</td><td>Janata Dal / United Front</td><td>H. D. Deve Gowda</td><td>Included in the coalition period before NDA consolidation.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1997–1998</td><td>Janata Dal / United Front</td><td>I. K. Gujral</td><td>Included in the coalition period before NDA consolidation.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>1998–2004</td><td>BJP-led NDA</td><td>Atal Bihari Vajpayee</td><td>Shown as the dedicated NDA band before UPA rule.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>2004–2014</td><td>INC-led UPA</td><td>Manmohan Singh</td><td>Shown as the dedicated UPA band before the 2014 change.<sup><a href="#src-5">[5]</a></sup></td></tr>
+          <tr><td>2014–2026</td><td>BJP-led NDA</td><td>Narendra Modi</td><td>Shown as the rightmost NDA band through the current period and up to the 2026 axis end.<sup><a href="#src-5">[5]</a></sup></td></tr>
         </tbody>
       </table>
     </section>
@@ -184,13 +220,11 @@
     <section class="panel">
       <h2>Source notes</h2>
       <ol class="source-notes">
-        <li id="src-1"><a href="https://api.worldbank.org/v2/country/IND/indicator/SI.POV.SOPO?format=json&per_page=200">World Bank indicator API: SI.POV.SOPO, poverty headcount ratio at societal poverty line (% of population), India</a> — points used here: 2004 = 46.4, 2009 = 36.5, 2011 = 33.4, 2022 = 21.3.</li>
+        <li id="src-1"><a href="https://api.worldbank.org/v2/country/IND/indicator/SI.POV.SOPO?format=json&per_page=200">World Bank indicator API: SI.POV.SOPO, poverty headcount ratio at societal poverty line (% of population), India</a> — points used here: 1977 = 59.7, 1983 = 50.9, 1987 = 51.8, 1993 = 47.5, 2004 = 46.4, 2009 = 36.5, 2011 = 33.4, 2022 = 21.3.</li>
         <li id="src-2"><a href="https://www.niti.gov.in/sites/default/files/2024-01/MPI-22_NITI-Aayog20254.pdf">NITI Aayog discussion paper PDF: Multidimensional Poverty in India since 2005-06</a> — used for 2005-06 = 55.34%, 2015-16 = 24.85%, 2019-21 = 14.96%, plus the methodology and values for 2013-14 and 2022-23.</li>
         <li id="src-3"><a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1940125">PIB release, 17 Jul 2023: 13.5 crore Indians escape multidimensional poverty in 5 years</a> — states the decline from 24.85% in 2015-16 to 14.96% in 2019-21.</li>
         <li id="src-4"><a href="https://pib.gov.in/PressReleasePage.aspx?PRID=1996271">PIB release, 15 Jan 2024: 24.82 crore Indians escape multidimensional poverty in last 9 years</a> — states the decline from 29.17% in 2013-14 to 11.28% in 2022-23 and links it to the 2024 NITI discussion paper.</li>
-        <li id="src-5"><a href="https://en.wikipedia.org/wiki/Atal_Bihari_Vajpayee">Wikipedia: Atal Bihari Vajpayee</a> — used for the 2000–2004 prime-minister period shown on the background bands.</li>
-        <li id="src-6"><a href="https://en.wikipedia.org/wiki/Manmohan_Singh">Wikipedia: Manmohan Singh</a> — used for the 2004–2014 prime-minister period shown on the background bands.</li>
-        <li id="src-7"><a href="https://en.wikipedia.org/wiki/Narendra_Modi">Wikipedia: Narendra Modi</a> — used for the 2014 onward prime-minister period shown on the background bands.</li>
+        <li id="src-5"><a href="https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India">Wikipedia: List of prime ministers of India</a> — used for the ruling-party / prime-minister timeline summarized on this page.</li>
       </ol>
     </section>
   </main>
