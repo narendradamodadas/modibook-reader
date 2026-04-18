@@ -26,32 +26,89 @@
     <section class="panel party-sum-panel">
       <div class="party-sum-header">
         <div>
-          <div class="eyebrow">Summed comparison</div>
-          <h2>Summed declared net worth of the major figures used here</h2>
-          <p class="muted">This compares the same five BJP figures and five Congress figures used in the table below. It is not a party-wide total; it is a like-for-like snapshot of the selected major figures on this page.<sup><a href="#src-3">[3]</a></sup></p>
+          <div class="eyebrow">Over time</div>
+          <h2>Summed declared net worth of selected major figures since 2000</h2>
+          <p class="muted">This top graph now shows a time series rather than a one-shot comparison. Each plotted year uses the latest verified affidavit-based net worth available up to that year for the selected BJP and Congress figures shown on this page. The first selected affidavits available in this series begin in 2004.<sup><a href="#src-22">[22]</a></sup><sup><a href="#src-23">[23]</a></sup><sup><a href="#src-24">[24]</a></sup></p>
         </div>
-        <div class="party-sum-difference">Congress total exceeds BJP by <strong>Rs 63,97,28,222</strong><span>≈ Rs 63.97 crore<sup><a href="#src-3">[3]</a></sup></span></div>
+        <div class="party-sum-difference">Latest plotted point: 2024<strong>Congress leads by Rs 63,97,28,222</strong><span>≈ Rs 63.97 crore difference at the latest point<sup><a href="#src-3">[3]</a></sup></span></div>
       </div>
-      <div class="party-sum-chart" aria-label="Bar chart comparing summed declared net worth of selected BJP and Congress leaders">
-        <article class="party-bar-card bjp-bar-card">
-          <div class="party-bar-topline">
-            <span class="party-name">BJP major figures</span>
-            <span class="party-total">Rs 1,05,38,58,811</span>
-          </div>
-          <div class="party-bar-track">
-            <div class="party-bar-fill bjp-bar-fill" style="width: 62.2%"></div>
-          </div>
-          <p class="party-bar-meta">Narendra Modi + Amit Shah + Nitin Gadkari + Yogi Adityanath + Himanta Biswa Sarma = <strong>≈ Rs 105.39 crore</strong><sup><a href="#src-3">[3]</a></sup></p>
+      <div class="party-sum-legend" aria-label="Chart legend">
+        <span class="legend-pill bjp-pill"><span class="legend-dot"></span>BJP selected figures</span>
+        <span class="legend-pill congress-pill"><span class="legend-dot"></span>Congress selected figures</span>
+      </div>
+      <div class="party-time-chart-wrap">
+        <svg class="party-time-chart" viewBox="0 0 1040 330" role="img" aria-label="Time-series graph of summed declared net worth for selected BJP and Congress leaders from 2004 to 2024">
+          <line x1="84" y1="286" x2="960" y2="286" class="chart-axis"></line>
+          <line x1="84" y1="36" x2="84" y2="286" class="chart-axis"></line>
+
+          <line x1="84" y1="286" x2="960" y2="286" class="chart-grid"></line>
+          <line x1="84" y1="216.6" x2="960" y2="216.6" class="chart-grid"></line>
+          <line x1="84" y1="147.1" x2="960" y2="147.1" class="chart-grid"></line>
+          <line x1="84" y1="77.7" x2="960" y2="77.7" class="chart-grid"></line>
+          <line x1="84" y1="36" x2="960" y2="36" class="chart-grid"></line>
+
+          <text x="72" y="290" class="chart-y-label">0</text>
+          <text x="48" y="220.6" class="chart-y-label">50 cr</text>
+          <text x="42" y="151.1" class="chart-y-label">100 cr</text>
+          <text x="42" y="81.7" class="chart-y-label">150 cr</text>
+          <text x="42" y="40" class="chart-y-label">180 cr</text>
+
+          <text x="84" y="308" class="chart-x-label">2000</text>
+          <text x="230" y="308" class="chart-x-label">2004</text>
+          <text x="376" y="308" class="chart-x-label">2008</text>
+          <text x="522" y="308" class="chart-x-label">2012</text>
+          <text x="668" y="308" class="chart-x-label">2016</text>
+          <text x="814" y="308" class="chart-x-label">2020</text>
+          <text x="960" y="308" class="chart-x-label chart-x-label-end">2024</text>
+
+          <polyline class="chart-line bjp-line" points="230.0,286.0 303.0,284.7 339.5,277.2 376.0,277.2 412.5,277.2 485.5,275.5 522.0,267.9 595.0,248.2 668.0,245.4 777.5,199.8 850.5,186.6 887.0,185.5 960.0,139.6"></polyline>
+          <polyline class="chart-line congress-line" points="230.0,284.0 303.0,284.0 339.5,284.0 376.0,277.9 412.5,245.4 485.5,245.4 522.0,245.4 595.0,217.6 668.0,217.6 777.5,178.4 850.5,178.4 887.0,178.4 960.0,50.8"></polyline>
+
+          <g class="chart-points bjp-points">
+            <circle cx="230.0" cy="286.0" r="4"></circle>
+            <circle cx="303.0" cy="284.7" r="4"></circle>
+            <circle cx="339.5" cy="277.2" r="4"></circle>
+            <circle cx="376.0" cy="277.2" r="4"></circle>
+            <circle cx="412.5" cy="277.2" r="4"></circle>
+            <circle cx="485.5" cy="275.5" r="4"></circle>
+            <circle cx="522.0" cy="267.9" r="4"></circle>
+            <circle cx="595.0" cy="248.2" r="4"></circle>
+            <circle cx="668.0" cy="245.4" r="4"></circle>
+            <circle cx="777.5" cy="199.8" r="4"></circle>
+            <circle cx="850.5" cy="186.6" r="4"></circle>
+            <circle cx="887.0" cy="185.5" r="4"></circle>
+            <circle cx="960.0" cy="139.6" r="5"></circle>
+          </g>
+          <g class="chart-points congress-points">
+            <circle cx="230.0" cy="284.0" r="4"></circle>
+            <circle cx="303.0" cy="284.0" r="4"></circle>
+            <circle cx="339.5" cy="284.0" r="4"></circle>
+            <circle cx="376.0" cy="277.9" r="4"></circle>
+            <circle cx="412.5" cy="245.4" r="4"></circle>
+            <circle cx="485.5" cy="245.4" r="4"></circle>
+            <circle cx="522.0" cy="245.4" r="4"></circle>
+            <circle cx="595.0" cy="217.6" r="4"></circle>
+            <circle cx="668.0" cy="217.6" r="4"></circle>
+            <circle cx="777.5" cy="178.4" r="4"></circle>
+            <circle cx="850.5" cy="178.4" r="4"></circle>
+            <circle cx="887.0" cy="178.4" r="4"></circle>
+            <circle cx="960.0" cy="50.8" r="5"></circle>
+          </g>
+
+          <text x="968" y="143.6" class="chart-end-label bjp-end-label">BJP: Rs 105.39 cr</text>
+          <text x="968" y="54.8" class="chart-end-label congress-end-label">Congress: Rs 169.36 cr</text>
+        </svg>
+      </div>
+      <div class="party-sum-meta-grid">
+        <article class="party-meta-card bjp-meta-card">
+          <div class="party-meta-kicker">Latest total used for BJP</div>
+          <div class="party-meta-value">Rs 1,05,38,58,811</div>
+          <p>Selected figures: Narendra Modi, Amit Shah, Nitin Gadkari, Yogi Adityanath, Himanta Biswa Sarma.<sup><a href="#src-22">[22]</a></sup><sup><a href="#src-24">[24]</a></sup></p>
         </article>
-        <article class="party-bar-card congress-bar-card">
-          <div class="party-bar-topline">
-            <span class="party-name">Congress major figures</span>
-            <span class="party-total">Rs 1,69,35,87,033</span>
-          </div>
-          <div class="party-bar-track">
-            <div class="party-bar-fill congress-bar-fill" style="width: 100%"></div>
-          </div>
-          <p class="party-bar-meta">Rahul Gandhi + Sonia Gandhi + Mallikarjun Kharge + Priyanka Gandhi Vadra + Shashi Tharoor = <strong>≈ Rs 169.36 crore</strong><sup><a href="#src-3">[3]</a></sup></p>
+        <article class="party-meta-card congress-meta-card">
+          <div class="party-meta-kicker">Latest total used for Congress</div>
+          <div class="party-meta-value">Rs 1,69,35,87,033</div>
+          <p>Selected figures: Rahul Gandhi, Sonia Gandhi, Mallikarjun Kharge, Priyanka Gandhi Vadra, Shashi Tharoor.<sup><a href="#src-23">[23]</a></sup><sup><a href="#src-24">[24]</a></sup></p>
         </article>
       </div>
     </section>
@@ -297,6 +354,9 @@
         <li id="src-19"><a href="https://en.wikipedia.org/wiki/Yogi_Adityanath">Wikipedia: Yogi Adityanath</a> — used for current office/family/religion fields shown here.</li>
         <li id="src-20"><a href="https://myneta.info/Assam2021/candidate.php?candidate_id=1035">MyNeta / ADR: Himanta Biswa Sarma, Assam 2021, Jalukbari</a> — declared assets Rs 17,27,65,162; liabilities Rs 3,51,97,352.</li>
         <li id="src-21"><a href="https://en.wikipedia.org/wiki/Himanta_Biswa_Sarma">Wikipedia: Himanta Biswa Sarma</a> — used for current office and family fields shown here.</li>
+        <li id="src-22">Historical BJP-series affidavit pages used for the over-time graph: <a href="https://myneta.info/2007Gujarat/candidate.php?candidate_id=501">Amit Shah, Gujarat 2007</a>; <a href="https://myneta.info/assam2006/candidate.php?candidate_id=125">Himanta Biswa Sarma, Assam 2006</a>; <a href="https://myneta.info/assam2011/candidate.php?candidate_id=651">Himanta Biswa Sarma, Assam 2011</a>; <a href="https://myneta.info/gujarat2012/candidate.php?candidate_id=1591">Narendra Modi, Gujarat 2012</a>; <a href="https://myneta.info/gujarat2012/candidate.php?candidate_id=1583">Amit Shah, Gujarat 2012</a>; <a href="https://myneta.info/ls2014/candidate.php?candidate_id=9769">Narendra Modi, Lok Sabha 2014, Varanasi</a>; <a href="https://myneta.info/ls2014/candidate.php?candidate_id=1226">Nitin Gadkari, Lok Sabha 2014, Nagpur</a>; <a href="https://myneta.info/ls2014/candidate.php?candidate_id=9254">Adityanath, Lok Sabha 2014, Gorakhpur</a>; plus the later BJP affidavit pages already cited in notes [1], [4], [5], [18], and [20].</li>
+        <li id="src-23">Historical Congress-series affidavit pages used for the over-time graph: <a href="https://myneta.info/loksabha2004/candidate.php?candidate_id=3952">Rahul Gandhi, Lok Sabha 2004</a>; <a href="https://myneta.info/loksabha2004/candidate.php?candidate_id=4819">Sonia Gandhi, Lok Sabha 2004</a>; <a href="https://myneta.info/ls2009/candidate.php?candidate_id=3839">Rahul Gandhi, Lok Sabha 2009</a>; <a href="https://myneta.info/ls2009/candidate.php?candidate_id=5613">Sonia Gandhi, Lok Sabha 2009</a>; <a href="https://myneta.info/ls2009/candidate.php?candidate_id=720">Mallikarjun Kharge, Lok Sabha 2009</a>; <a href="https://myneta.info/ls2009/candidate.php?candidate_id=1668">Shashi Tharoor, Lok Sabha 2009</a>; <a href="https://myneta.info/karnatka2008/candidate.php?candidate_id=562">Mallikarjun Kharge, Karnataka 2008</a>; plus the later Congress affidavit pages already cited in notes [2], [6], [12], [14], and [16].</li>
+        <li id="src-24">Method used for the over-time graph: for each plotted year, I summed the latest verified affidavit-based net worth then available for each selected leader at or before that year. This creates a sourced step-style time series rather than an invented annual interpolation. Where a leader filed more than one affidavit in the same election year, I used the filing aligned with the main comparison table on this page. Arithmetic checks were done locally from the affidavit figures.</li>
       </ol>
     </section>
   </main>
