@@ -140,3 +140,47 @@ p { line-height: 1.7; margin: 0 0 1em; }
 .scan-link img { transition: transform 180ms ease, box-shadow 180ms ease; }
 .scan-link:hover img { transform: scale(1.01); }
 .scan-note { color: #5f6b6f; font-size: 0.95rem; margin-bottom: 10px; }
+
+
+.scan-panel {
+  max-width: 860px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.scan-panel h2,
+.scan-note {
+  text-align: center;
+}
+.scan-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f4f6f8;
+  box-shadow: inset 0 0 0 1px #e4e8ec;
+}
+.scan-panel img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 680px);
+  max-height: 62vh;
+  object-fit: contain;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+}
+@media (max-width: 900px) {
+  .scan-panel img {
+    max-width: 100%;
+    max-height: 56vh;
+  }
+}
+
+
+.book-page-bg { position: fixed; inset: 0; z-index: 0; background-position: center; background-size: cover; background-repeat: no-repeat; opacity: 0; transform: scale(1.015); transition: opacity 700ms ease, transform 900ms ease; }
+.book-page-bg.is-visible { opacity: 1; transform: scale(1); }
+.book-bg-body .hero-book { background: linear-gradient(135deg, rgba(60,44,34,0.88), rgba(98,71,49,0.86)); }
+.book-bg-body .panel, .book-bg-body .hero-book { backdrop-filter: blur(6px); }
+.book-bg-body .panel { background: rgba(255,255,255,0.92); }
+.index-wrap .info-grid { align-items: stretch; }

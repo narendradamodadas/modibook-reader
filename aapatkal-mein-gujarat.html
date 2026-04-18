@@ -6,12 +6,13 @@
   <title>Aapatkal Mein Gujarat: Gujarat in the Emergency — Book Index</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <main class="index-wrap">
+<body class="book-bg-body">
+  <div class="modibook-bg book-page-bg" aria-hidden="true"></div>
+  <main class="index-wrap index-wrap-overlay">
     <header class="hero hero-book">
       <div class="eyebrow">Book reader</div>
       <h1>Aapatkal Mein Gujarat</h1>
-      <p class="lead"><strong>Aapatkal Mein Gujarat: Gujarat in the Emergency</strong> is presented here as a web edition. Every reading page keeps the original text on the left, English on the right, and the scan below for reference.</p>
+      <p class="lead"><strong>Aapatkal Mein Gujarat: Gujarat in the Emergency</strong> is presented here as a Hindi web edition of Modi's Emergency-era narrative. The original Hindi OCR appears on the left, the English translation on the right, and the scan remains below for reference and verification.</p>
       <div class="hero-actions">
         <a class="button primary" href="books/aapatkal-mein-gujarat/pages/page-001.html">Start reading</a>
         <a class="button" href="index.html">← Back to library</a>
@@ -21,6 +22,8 @@
     <section class="info-grid">
       <article class="panel"><h2>Book overview</h2><p>A Hindi edition of Narendra Modi’s account of Gujarat during the Emergency, centered on political resistance, underground networks, and democratic struggle.</p></article>
       <article class="panel"><h2>Publication context</h2><p>First published in 2004, this Hindi edition revisits the Emergency period (1975–77) through Gujarat’s resistance experience. Modi was 53 years old at first publication of this edition.</p></article>
+      <article class="panel"><h2>Short summary</h2><p>The book revisits underground organization, documentary recollection, and the political memory of resistance in Gujarat during the Emergency.</p></article>
+      <article class="panel"><h2>How to use it</h2><p>Use the section overview, grouped page ranges, direct page jump, and English search to move through the book efficiently.</p></article>
       <article class="panel"><h2>Quick links</h2><ul class="quicklinks"><li><a href="books/aapatkal-mein-gujarat/pages/page-001.html">Cover</a></li><li><a href="books/aapatkal-mein-gujarat/pages/page-003.html">Title page</a></li><li><a href="books/aapatkal-mein-gujarat/pages/page-005.html">Main preface</a></li></ul></article>
     </section>
 
@@ -81,6 +84,33 @@
     pageJumpButton.addEventListener('click', goToPage);
     pageJumpInput.addEventListener('keydown', e => { if (e.key==='Enter') goToPage(); });
     renderResults([], '');
+
+    const BACKGROUNDS = [
+      'assets/priestking.jpg',
+      'assets/Mudiji.jpg',
+      'assets/glasses.jpg',
+      'assets/muditiger2.png'
+    ];
+    const bgEl = document.querySelector('.book-page-bg');
+    if (bgEl) {
+      const storageKey = 'aapatkalBackgroundChoice';
+      let chosen = null;
+      try { chosen = sessionStorage.getItem(storageKey); } catch (e) {}
+      if (!chosen || !BACKGROUNDS.includes(chosen)) {
+        chosen = BACKGROUNDS[Math.floor(Math.random() * BACKGROUNDS.length)];
+        try { sessionStorage.setItem(storageKey, chosen); } catch (e) {}
+      }
+      const preloader = new Image();
+      preloader.onload = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.64), rgba(22, 22, 26, 0.64)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.onerror = () => {
+        bgEl.style.backgroundImage = `linear-gradient(rgba(22, 22, 26, 0.64), rgba(22, 22, 26, 0.64)), url('${chosen}')`;
+        bgEl.classList.add('is-visible');
+      };
+      preloader.src = chosen;
+    }
   </script>
 </body>
 </html>
