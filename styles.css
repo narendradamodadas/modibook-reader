@@ -1083,3 +1083,41 @@ p { line-height: 1.7; margin: 0 0 1em; }
     font-size: 10px;
   }
 }
+
+
+.ngo-wrap {
+  max-width: 1320px;
+}
+.ngo-hero {
+  background: linear-gradient(135deg, #27434e, #315d68 42%, #6a4c2f 100%);
+}
+.ngo-christian-pill {
+  background: #eef7ff;
+  color: #2f5faa;
+}
+.ngo-christian-pill .legend-dot {
+  background: #3c7ed9;
+}
+.ngo-islamic-pill {
+  background: #eef8ef;
+  color: #247541;
+}
+.ngo-islamic-pill .legend-dot {
+  background: #2d9a59;
+}
+.ngo-christian-line {
+  stroke: #3c7ed9;
+}
+.ngo-islamic-line {
+  stroke: #2d9a59;
+}
+.ngo-christian-points circle {
+  fill: #3c7ed9;
+}
+.ngo-islamic-points circle {
+  fill: #2d9a59;
+}
+.ngo-method-panel,
+.ngo-graph-panel {
+  margin-bottom: 24px;
+}
