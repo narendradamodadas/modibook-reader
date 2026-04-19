@@ -23,7 +23,43 @@
       </div>
     </header>
 
-    <section class="panel ngo-method-panel">
+    <section class="panel ngo-intro-panel">
+      <div class="ngo-summary-grid">
+        <article class="ngo-summary-card">
+          <div class="ngo-summary-kicker">Scope</div>
+          <h3>Formal public roles only</h3>
+          <p>Founder, chairman, chancellor, managing-director, and similarly explicit institutional roles only. No rumor-layer association padding.</p>
+        </article>
+        <article class="ngo-summary-card">
+          <div class="ngo-summary-kicker">Evidence standard</div>
+          <h3>Graphable vs table-only</h3>
+          <p>Rows with clean first-year evidence are graphed. Weaker but still useful rows stay visible as table-only with explicit caveats.</p>
+        </article>
+        <article class="ngo-summary-card">
+          <div class="ngo-summary-kicker">Current mix</div>
+          <h3>Registry counts + institutional links</h3>
+          <p>The page separates national registry/property context from politician-specific school, trust, and university links.</p>
+        </article>
+      </div>
+      <div class="ngo-jump-panel">
+        <div class="ngo-jump-copy">
+          <strong>Jump to section</strong>
+          <span class="muted">Use this as a quick map instead of scrolling through the whole evidence stack linearly.</span>
+        </div>
+        <div class="ngo-jump-links">
+          <a class="ngo-jump-link" href="#method">Method</a>
+          <a class="ngo-jump-link" href="#national-counts">Counts</a>
+          <a class="ngo-jump-link" href="#land-audit">Land audit</a>
+          <a class="ngo-jump-link" href="#connections-context">Responsibility</a>
+          <a class="ngo-jump-link" href="#timeline-graph">Timeline</a>
+          <a class="ngo-jump-link" href="#network-map">Network map</a>
+          <a class="ngo-jump-link" href="#entries-table">Entries</a>
+          <a class="ngo-jump-link" href="#sources-cautions">Sources</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel ngo-method-panel" id="method">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Method</div>
@@ -54,7 +90,7 @@
     </section>
 
 
-    <section class="panel ngo-stats-panel">
+    <section class="panel ngo-stats-panel" id="national-counts">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">National counts</div>
@@ -105,7 +141,7 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel ngo-audit-panel" id="land-audit">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Land graph audit</div>
@@ -144,9 +180,12 @@
         </tbody>
       </table></div>
       <div class="poverty-footnote muted">The narrowest partial path I found was FCRA annual-return disclosure about immovable properties acquired out of foreign contribution, but that is still not the same thing as total land owned by all NGOs in India, and it does not cleanly solve Christian/Muslim annual totals either.</div>
+      <div class="ngo-callout">
+        <strong>Cleaner takeaway:</strong> the page now shows the strongest defensible institutional-link evidence, while explicitly refusing to fake an annual land graph that the source base does not support.
+      </div>
     </section>
 
-    <section class="panel">
+    <section class="panel ngo-context-panel" id="connections-context">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Responsibility vs connection</div>
@@ -197,7 +236,7 @@
       </table></div>
     </section>
 
-    <section class="panel ngo-graph-panel">
+    <section class="panel ngo-graph-panel" id="timeline-graph">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Graph</div>
@@ -269,7 +308,7 @@
     </section>
 
 
-    <section class="panel">
+    <section class="panel ngo-network-panel" id="network-map">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Network chart</div>
@@ -388,7 +427,7 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel ngo-density-panel">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Institution-group density</div>
@@ -417,7 +456,7 @@
       </table></div>
     </section>
 
-    <section class="panel">
+    <section class="panel ngo-entries-panel" id="entries-table">
       <div class="section-head">
         <div>
           <div class="eyebrow stat-eyebrow">Documented entries</div>
@@ -455,7 +494,7 @@
       </table></div>
     </section>
 
-    <section class="panel">
+    <section class="panel ngo-sources-panel" id="sources-cautions">
       <h2>Source notes and cautions</h2>
       <ol class="source-notes">
         <li><a href="https://ngodarpan.gov.in/#/">NITI Aayog NGO Darpan portal</a> — used for total, active, blacklisted, and type-summary NGO counts (snapshot visible on the homepage dashboard, last updated 15-04-2026).</li>
