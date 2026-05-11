@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>India electricity and sanitation time-lapse</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; background:linear-gradient(180deg,#f7f6f3 0%,#efede7 100%); color:#222; }
+    .library-wrap { max-width:1200px; margin:0 auto; padding:24px; }
+    .panel { background:white; border-radius:14px; padding:20px; box-shadow:0 4px 18px rgba(0,0,0,.06); margin-bottom:20px; }
+    .hero { color:white; border-radius:18px; padding:32px; box-shadow:0 10px 30px rgba(0,0,0,.15); margin-bottom:24px; }
+    .hero-home { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr); align-items:center; gap:28px; }
+    .hero h1 { margin:0 0 10px; font-size:2.4rem; }
+    .lead { font-size:1.08rem; line-height:1.7; max-width:850px; }
+    .hero-actions, .card-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+    .button { display:inline-block; padding:11px 16px; border-radius:999px; background:rgba(255,255,255,.12); color:white; border:1px solid rgba(255,255,255,.25); text-decoration:none; }
+    .button.primary { background:white; color:#18324a; border-color:white; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; opacity:.85; margin-bottom:10px; }
+    .hero-art img { width:min(100%,300px); height:auto; object-fit:cover; border-radius:18px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:18px; flex-wrap:wrap; margin-bottom:18px; }
+    .section-head h2 { margin:0; }
+    .section-note { max-width:620px; color:#59636b; line-height:1.7; margin:0; }
+    .responsive-chart-wrap { overflow-x:auto; border-radius:18px; }
+    .party-time-chart { width:100%; max-width:100%; min-width:760px; height:auto; display:block; }
+    .chart-axis { stroke:rgba(27,40,56,.55); stroke-width:1.5; }
+    .chart-grid { stroke:rgba(27,40,56,.12); stroke-width:1; }
+    .chart-line { fill:none; stroke-width:3.5; stroke-linecap:round; stroke-linejoin:round; }
+    .chart-points circle { stroke:#fff; stroke-width:2; }
+    .chart-y-label, .chart-x-label { font-size:13px; fill:#5d6872; }
+    .chart-end-label, .chart-value-label { font-size:12px; font-weight:800; text-anchor:end; }
+    .gov-band-label { font-size:12px; font-weight:800; fill:#33414d; text-anchor:middle; }
+    .modi-marker-line { stroke:#d8891c; stroke-width:2; stroke-dasharray:6 5; }
+    .modi-marker-label { font-size:12px; font-weight:800; fill:#9a5a14; }
+    .legend-pill { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; font-weight:700; font-size:.95rem; border:1px solid rgba(27,40,56,.10); }
+    .legend-dot { width:10px; height:10px; border-radius:999px; display:inline-block; }
+    .party-sum-legend { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+    .table-wrap { overflow-x:auto; }
+    .status-table { width:100%; border-collapse:collapse; font-size:.95rem; }
+    .status-table th, .status-table td { text-align:left; padding:12px 10px; border-bottom:1px solid #e5e7eb; vertical-align:top; }
+    .status-table th { background:#f8fafc; }
+    .muted { color:#666; font-size:.95rem; }
+    .source-notes li { margin:10px 0; line-height:1.6; }
+    .infra-hero { background: linear-gradient(135deg, #162d3a, #1f6f75 48%, #9b6a22 100%); }
+    .infra-wrap { max-width: 1320px; }
+    .infra-summary { display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+    .infra-metric { border-radius:18px; padding:18px 20px; color:#17323a; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+    .infra-metric strong { display:block; font-size:2.15rem; line-height:1; margin:6px 0; }
+    .metric-electric { background:linear-gradient(135deg,#fff4c7,#ffe69b); }
+    .metric-sanitation { background:linear-gradient(135deg,#dcf8ee,#bcebdc); }
+    .metric-open { background:linear-gradient(135deg,#ffe2d7,#ffc5b5); }
+    .metric-window { background:linear-gradient(135deg,#eef4ff,#dfeaff); }
+    .zeitraffer-panel { background: radial-gradient(circle at top left, rgba(255,219,124,.35), transparent 24%), linear-gradient(135deg,#0f2430,#173b46); color:white; overflow:hidden; }
+    .zeitraffer-stage { display:grid; grid-template-columns: minmax(170px,.55fr) minmax(0,1.45fr); gap:24px; align-items:center; }
+    .year-dial { text-align:center; padding:24px; border-radius:24px; background:rgba(255,255,255,.09); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); }
+    .year-dial .year { font-size:4rem; line-height:1; font-weight:900; letter-spacing:-.05em; }
+    .year-dial .caption { opacity:.78; margin-top:8px; }
+    .bar-stack { display:grid; gap:18px; }
+    .zbar-label { display:flex; justify-content:space-between; gap:12px; font-weight:800; margin-bottom:7px; }
+    .zbar-track { height:26px; border-radius:999px; background:rgba(255,255,255,.14); overflow:hidden; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+    .zbar-fill { height:100%; border-radius:999px; width:0; transition:width 420ms ease; }
+    .zbar-electric { background:linear-gradient(90deg,#ffd25f,#fff1a8); }
+    .zbar-sanitation { background:linear-gradient(90deg,#35d49f,#b6ffe1); }
+    .zbar-open { background:linear-gradient(90deg,#ff8b67,#ffc2a8); }
+    .zeitraffer-controls { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:20px; }
+    .zeitraffer-controls button { border:0; border-radius:999px; padding:11px 16px; font-weight:800; cursor:pointer; }
+    .zeitraffer-controls input[type=range] { flex:1 1 280px; accent-color:#ffd25f; }
+    .electric-line { stroke:#d49216; } .electric-points circle { fill:#d49216; }
+    .sanitation-line { stroke:#179b73; } .sanitation-points circle { fill:#179b73; }
+    .open-defecation-line { stroke:#d44d33; } .open-defecation-points circle { fill:#d44d33; }
+    .electric-pill { background:#fff3ca; color:#8a5605; } .electric-pill .legend-dot { background:#d49216; }
+    .sanitation-pill { background:#dff7ef; color:#11674f; } .sanitation-pill .legend-dot { background:#179b73; }
+    .open-defecation-pill { background:#ffe5dd; color:#9d341f; } .open-defecation-pill .legend-dot { background:#d44d33; }
+    .pre-2014-band { fill:#dbe7f3; opacity:.42; } .post-2014-band { fill:#ffe6c4; opacity:.42; }
+    .electric-label { fill:#8a5605; } .sanitation-label { fill:#11674f; } .open-defecation-label { fill:#9d341f; }
+    .method-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+    @media (max-width:800px) { .zeitraffer-stage { grid-template-columns:1fr; } .year-dial .year { font-size:3rem; } }
+  </style>
+</head>
+<body>
+  <main class="library-wrap infra-wrap">
+    <header class="hero hero-home infra-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Infrastructure comparison tab</div>
+        <h1>India electricity and toilets: a 2000–2024 Zeitraffer</h1>
+        <p class="lead">A sourced time-lapse view of three basic-service indicators: people with access to electricity, people using at least basic sanitation, and people still practicing open defecation. The data are World Bank indicator series for India; sanitation and open-defecation values are based on the WHO/UNICEF Joint Monitoring Programme methodology used in WDI.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="index.html">Back to archive home</a>
+          <a class="button" href="#sources">Sources</a>
+        </div>
+      </div>
+      <div class="hero-art"><img src="assets/priestking16.jpg" alt="Stylized portrait illustration used on the archive homepage"></div>
+    </header>
+
+    <section class="infra-summary">
+      <article class="infra-metric metric-electric"><div class="eyebrow stat-eyebrow">Electricity access</div><strong>60.3% → 99.5%</strong><p>World Bank India electricity access series from 2000 to latest available 2023.</p></article>
+      <article class="infra-metric metric-sanitation"><div class="eyebrow stat-eyebrow">Basic sanitation</div><strong>14.7% → 83.4%</strong><p>People using at least basic sanitation services, 2000 to 2024.</p></article>
+      <article class="infra-metric metric-open"><div class="eyebrow stat-eyebrow">Open defecation</div><strong>73.2% → 6.7%</strong><p>People practicing open defecation, 2000 to 2024. Lower is better.</p></article>
+      <article class="infra-metric metric-window"><div class="eyebrow stat-eyebrow">Animation window</div><strong>2000–2023</strong><p>The Zeitraffer uses 2000–2023 because all three series overlap there. Sanitation also has 2024 values.</p></article>
+    </section>
+
+    <section class="panel zeitraffer-panel" id="zeitraffer">
+      <div class="section-head">
+        <div><div class="eyebrow">Zeitraffer / time-lapse</div><h2>Slide or press play to watch the rates change</h2></div>
+        <p class="section-note" style="color:rgba(255,255,255,.78)">This imitates the style of animated development GIFs, but keeps the underlying values visible and source-backed.</p>
+      </div>
+      <div class="zeitraffer-stage">
+        <div class="year-dial"><div class="year" id="z-year">2000</div><div class="caption">India, % of population</div></div>
+        <div class="bar-stack">
+          <div><div class="zbar-label"><span>Access to electricity</span><span id="z-electricity">60.3%</span></div><div class="zbar-track"><div id="bar-electricity" class="zbar-fill zbar-electric"></div></div></div>
+          <div><div class="zbar-label"><span>Using at least basic sanitation</span><span id="z-sanitation">14.7%</span></div><div class="zbar-track"><div id="bar-sanitation" class="zbar-fill zbar-sanitation"></div></div></div>
+          <div><div class="zbar-label"><span>Practicing open defecation</span><span id="z-open">73.2%</span></div><div class="zbar-track"><div id="bar-open" class="zbar-fill zbar-open"></div></div></div>
+        </div>
+      </div>
+      <div class="zeitraffer-controls">
+        <button id="play-timeline" type="button">Play</button>
+        <input id="year-slider" type="range" min="0" max="23" value="0" step="1" aria-label="Choose year">
+        <span id="range-label">2000–2023</span>
+      </div>
+    </section>
+
+    <section class="panel poverty-panel">
+      <div class="section-head">
+        <div><div class="eyebrow stat-eyebrow">Chart</div><h2>Electricity, toilets, and open defecation on one timeline</h2></div>
+        <p class="section-note">The chart uses actual annual World Bank API values. I do not interpolate missing values; electricity currently stops at 2023 in the fetched API while sanitation/open-defecation extend to 2024.</p>
+      </div>
+      <div class="party-sum-legend poverty-legend">
+        <span class="legend-pill electric-pill"><span class="legend-dot"></span>Access to electricity</span>
+        <span class="legend-pill sanitation-pill"><span class="legend-dot"></span>At least basic sanitation</span>
+        <span class="legend-pill open-defecation-pill"><span class="legend-dot"></span>Open defecation</span>
+        <span class="legend-pill modi-marker-pill"><span class="legend-dot modi-marker-dot"></span>2014 marker</span>
+      </div>
+      <div class="party-time-chart-wrap responsive-chart-wrap"><svg class="party-time-chart responsive-chart infra-chart" viewBox="0 0 1040 360" role="img" aria-label="India electricity access basic sanitation and open defecation rates from 2000 to 2024">
+  <rect x="82" y="42" width="535.5" height="260" class="pre-2014-band"></rect>
+  <rect x="617.5" y="42" width="382.5" height="260" class="post-2014-band"></rect>
+  <text x="349.8" y="60" class="gov-band-label">2000–2014</text>
+  <text x="808.8" y="60" class="gov-band-label">2014 onward</text>
+  <line x1="82" y1="302.0" x2="1000" y2="302.0" class="chart-grid"></line><text x="54" y="306.0" class="chart-y-label">0%</text>
+<line x1="82" y1="250.0" x2="1000" y2="250.0" class="chart-grid"></line><text x="54" y="254.0" class="chart-y-label">20%</text>
+<line x1="82" y1="198.0" x2="1000" y2="198.0" class="chart-grid"></line><text x="54" y="202.0" class="chart-y-label">40%</text>
+<line x1="82" y1="146.0" x2="1000" y2="146.0" class="chart-grid"></line><text x="54" y="150.0" class="chart-y-label">60%</text>
+<line x1="82" y1="94.0" x2="1000" y2="94.0" class="chart-grid"></line><text x="54" y="98.0" class="chart-y-label">80%</text>
+<line x1="82" y1="42.0" x2="1000" y2="42.0" class="chart-grid"></line><text x="54" y="46.0" class="chart-y-label">100%</text>
+<line x1="82.0" y1="42" x2="82.0" y2="302" class="chart-grid faint-grid"></line><text x="82.0" y="336" class="chart-x-label">2000</text>
+<line x1="273.2" y1="42" x2="273.2" y2="302" class="chart-grid faint-grid"></line><text x="273.2" y="336" class="chart-x-label">2005</text>
+<line x1="464.5" y1="42" x2="464.5" y2="302" class="chart-grid faint-grid"></line><text x="464.5" y="336" class="chart-x-label">2010</text>
+<line x1="617.5" y1="42" x2="617.5" y2="302" class="chart-grid faint-grid"></line><text x="617.5" y="336" class="chart-x-label">2014</text>
+<line x1="808.8" y1="42" x2="808.8" y2="302" class="chart-grid faint-grid"></line><text x="808.8" y="336" class="chart-x-label">2019</text>
+<line x1="1000.0" y1="42" x2="1000.0" y2="302" class="chart-grid faint-grid"></line><text x="1000.0" y="336" class="chart-x-label">2024</text>
+  <line x1="82" y1="302" x2="1000" y2="302" class="chart-axis"></line>
+  <line x1="82" y1="42" x2="82" y2="302" class="chart-axis"></line>
+  <line x1="617.5" y1="42" x2="617.5" y2="302" class="modi-marker-line"></line>
+  <text x="625.5" y="76" class="modi-marker-label">2014 Modi PM</text>
+  <polyline class="chart-line electric-line" points="82.0,145.2 120.2,140.8 158.5,140.0 196.8,132.0 235.0,134.6 273.2,123.1 311.5,125.5 349.8,114.0 388.0,109.3 426.2,107.0 464.5,103.6 502.8,95.3 541.0,94.3 579.2,85.9 617.5,80.7 655.8,73.2 694.0,69.0 732.2,63.3 770.5,53.2 808.8,52.7 847.0,51.1 885.2,43.0 923.5,44.1 961.8,43.3"></polyline>
+  <polyline class="chart-line sanitation-line" points="82.0,263.8 120.2,257.3 158.5,250.0 196.8,243.0 235.0,235.7 273.2,228.4 311.5,221.1 349.8,213.9 388.0,206.3 426.2,199.0 464.5,191.5 502.8,184.0 541.0,176.4 579.2,168.9 617.5,161.1 655.8,153.5 694.0,145.7 732.2,137.9 770.5,130.1 808.8,122.3 847.0,114.8 885.2,107.3 923.5,99.7 961.8,92.2 1000.0,85.2"></polyline>
+  <polyline class="chart-line open-defecation-line" points="82.0,111.7 120.2,119.2 158.5,127.0 196.8,134.6 235.0,142.1 273.2,149.6 311.5,156.9 349.8,164.5 388.0,171.7 426.2,179.3 464.5,186.6 502.8,193.8 541.0,201.1 579.2,208.1 617.5,215.4 655.8,222.4 694.0,229.7 732.2,236.7 770.5,243.8 808.8,250.8 847.0,257.8 885.2,264.8 923.5,271.6 961.8,278.6 1000.0,284.6"></polyline>
+  <g class="chart-points electric-points"><circle cx="82.0" cy="145.2" r="4"><title>2000: 60.3%</title></circle>
+<circle cx="120.2" cy="140.8" r="4"><title>2001: 62.0%</title></circle>
+<circle cx="158.5" cy="140.0" r="4"><title>2002: 62.3%</title></circle>
+<circle cx="196.8" cy="132.0" r="4"><title>2003: 65.4%</title></circle>
+<circle cx="235.0" cy="134.6" r="4"><title>2004: 64.4%</title></circle>
+<circle cx="273.2" cy="123.1" r="4"><title>2005: 68.8%</title></circle>
+<circle cx="311.5" cy="125.5" r="4"><title>2006: 67.9%</title></circle>
+<circle cx="349.8" cy="114.0" r="4"><title>2007: 72.3%</title></circle>
+<circle cx="388.0" cy="109.3" r="4"><title>2008: 74.1%</title></circle>
+<circle cx="426.2" cy="107.0" r="4"><title>2009: 75.0%</title></circle>
+<circle cx="464.5" cy="103.6" r="4"><title>2010: 76.3%</title></circle>
+<circle cx="502.8" cy="95.3" r="4"><title>2011: 79.5%</title></circle>
+<circle cx="541.0" cy="94.3" r="4"><title>2012: 79.9%</title></circle>
+<circle cx="579.2" cy="85.9" r="4"><title>2013: 83.1%</title></circle>
+<circle cx="617.5" cy="80.7" r="4"><title>2014: 85.1%</title></circle>
+<circle cx="655.8" cy="73.2" r="4"><title>2015: 88.0%</title></circle>
+<circle cx="694.0" cy="69.0" r="4"><title>2016: 89.6%</title></circle>
+<circle cx="732.2" cy="63.3" r="4"><title>2017: 91.8%</title></circle>
+<circle cx="770.5" cy="53.2" r="4"><title>2018: 95.7%</title></circle>
+<circle cx="808.8" cy="52.7" r="4"><title>2019: 95.9%</title></circle>
+<circle cx="847.0" cy="51.1" r="4"><title>2020: 96.5%</title></circle>
+<circle cx="885.2" cy="43.0" r="4"><title>2021: 99.6%</title></circle>
+<circle cx="923.5" cy="44.1" r="4"><title>2022: 99.2%</title></circle>
+<circle cx="961.8" cy="43.3" r="4"><title>2023: 99.5%</title></circle></g>
+  <g class="chart-points sanitation-points"><circle cx="82.0" cy="263.8" r="4"><title>2000: 14.7%</title></circle>
+<circle cx="120.2" cy="257.3" r="4"><title>2001: 17.2%</title></circle>
+<circle cx="158.5" cy="250.0" r="4"><title>2002: 20.0%</title></circle>
+<circle cx="196.8" cy="243.0" r="4"><title>2003: 22.7%</title></circle>
+<circle cx="235.0" cy="235.7" r="4"><title>2004: 25.5%</title></circle>
+<circle cx="273.2" cy="228.4" r="4"><title>2005: 28.3%</title></circle>
+<circle cx="311.5" cy="221.1" r="4"><title>2006: 31.1%</title></circle>
+<circle cx="349.8" cy="213.9" r="4"><title>2007: 33.9%</title></circle>
+<circle cx="388.0" cy="206.3" r="4"><title>2008: 36.8%</title></circle>
+<circle cx="426.2" cy="199.0" r="4"><title>2009: 39.6%</title></circle>
+<circle cx="464.5" cy="191.5" r="4"><title>2010: 42.5%</title></circle>
+<circle cx="502.8" cy="184.0" r="4"><title>2011: 45.4%</title></circle>
+<circle cx="541.0" cy="176.4" r="4"><title>2012: 48.3%</title></circle>
+<circle cx="579.2" cy="168.9" r="4"><title>2013: 51.2%</title></circle>
+<circle cx="617.5" cy="161.1" r="4"><title>2014: 54.2%</title></circle>
+<circle cx="655.8" cy="153.5" r="4"><title>2015: 57.1%</title></circle>
+<circle cx="694.0" cy="145.7" r="4"><title>2016: 60.1%</title></circle>
+<circle cx="732.2" cy="137.9" r="4"><title>2017: 63.1%</title></circle>
+<circle cx="770.5" cy="130.1" r="4"><title>2018: 66.1%</title></circle>
+<circle cx="808.8" cy="122.3" r="4"><title>2019: 69.1%</title></circle>
+<circle cx="847.0" cy="114.8" r="4"><title>2020: 72.0%</title></circle>
+<circle cx="885.2" cy="107.3" r="4"><title>2021: 74.9%</title></circle>
+<circle cx="923.5" cy="99.7" r="4"><title>2022: 77.8%</title></circle>
+<circle cx="961.8" cy="92.2" r="4"><title>2023: 80.7%</title></circle>
+<circle cx="1000.0" cy="85.2" r="4"><title>2024: 83.4%</title></circle></g>
+  <g class="chart-points open-defecation-points"><circle cx="82.0" cy="111.7" r="4"><title>2000: 73.2%</title></circle>
+<circle cx="120.2" cy="119.2" r="4"><title>2001: 70.3%</title></circle>
+<circle cx="158.5" cy="127.0" r="4"><title>2002: 67.3%</title></circle>
+<circle cx="196.8" cy="134.6" r="4"><title>2003: 64.4%</title></circle>
+<circle cx="235.0" cy="142.1" r="4"><title>2004: 61.5%</title></circle>
+<circle cx="273.2" cy="149.6" r="4"><title>2005: 58.6%</title></circle>
+<circle cx="311.5" cy="156.9" r="4"><title>2006: 55.8%</title></circle>
+<circle cx="349.8" cy="164.5" r="4"><title>2007: 52.9%</title></circle>
+<circle cx="388.0" cy="171.7" r="4"><title>2008: 50.1%</title></circle>
+<circle cx="426.2" cy="179.3" r="4"><title>2009: 47.2%</title></circle>
+<circle cx="464.5" cy="186.6" r="4"><title>2010: 44.4%</title></circle>
+<circle cx="502.8" cy="193.8" r="4"><title>2011: 41.6%</title></circle>
+<circle cx="541.0" cy="201.1" r="4"><title>2012: 38.8%</title></circle>
+<circle cx="579.2" cy="208.1" r="4"><title>2013: 36.1%</title></circle>
+<circle cx="617.5" cy="215.4" r="4"><title>2014: 33.3%</title></circle>
+<circle cx="655.8" cy="222.4" r="4"><title>2015: 30.6%</title></circle>
+<circle cx="694.0" cy="229.7" r="4"><title>2016: 27.8%</title></circle>
+<circle cx="732.2" cy="236.7" r="4"><title>2017: 25.1%</title></circle>
+<circle cx="770.5" cy="243.8" r="4"><title>2018: 22.4%</title></circle>
+<circle cx="808.8" cy="250.8" r="4"><title>2019: 19.7%</title></circle>
+<circle cx="847.0" cy="257.8" r="4"><title>2020: 17.0%</title></circle>
+<circle cx="885.2" cy="264.8" r="4"><title>2021: 14.3%</title></circle>
+<circle cx="923.5" cy="271.6" r="4"><title>2022: 11.7%</title></circle>
+<circle cx="961.8" cy="278.6" r="4"><title>2023: 9.0%</title></circle>
+<circle cx="1000.0" cy="284.6" r="4"><title>2024: 6.7%</title></circle></g>
+  <text x="953.8" y="31.3" class="chart-end-label electric-label">Electricity 99.5% (2023)</text>
+  <text x="1000.0" y="71.2" class="chart-end-label sanitation-label">Basic sanitation 83.4% (2024)</text>
+  <text x="1000.0" y="306.6" class="chart-end-label open-defecation-label">Open defecation 6.7% (2024)</text>
+</svg></div>
+      <p class="muted">Interpretation: electricity access approaches near-universal coverage by the early 2020s; sanitation access rises steadily from a very low base; open defecation falls sharply but remains non-zero in the World Bank/JMP series.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Milestone table</h2>
+      <div class="table-wrap">
+        <table class="status-table authorship-table provenance-table">
+          <thead><tr><th>Year</th><th>Electricity access</th><th>At least basic sanitation</th><th>Open defecation</th></tr></thead>
+          <tbody><tr><td>2000</td><td>60.3%</td><td>14.7%</td><td>73.2%</td></tr>
+<tr><td>2005</td><td>68.8%</td><td>28.3%</td><td>58.6%</td></tr>
+<tr><td>2010</td><td>76.3%</td><td>42.5%</td><td>44.4%</td></tr>
+<tr><td>2014</td><td>85.1%</td><td>54.2%</td><td>33.3%</td></tr>
+<tr><td>2019</td><td>95.9%</td><td>69.1%</td><td>19.7%</td></tr>
+<tr><td>2023</td><td>99.5%</td><td>80.7%</td><td>9.0%</td></tr>
+<tr><td>2024</td><td>n/a in World Bank API yet</td><td>83.4%</td><td>6.7%</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><div class="eyebrow stat-eyebrow">Method</div><h2>What the indicators mean</h2></div></div>
+      <div class="method-grid">
+        <article class="confidence-card confidence-positive"><h3>Electricity</h3><p>World Bank indicator <strong>EG.ELC.ACCS.ZS</strong>: access to electricity as a percentage of India’s population. This is a people-level access series, not a measure of power quality, outages, or per-capita electricity consumption.</p></article>
+        <article class="confidence-card confidence-positive"><h3>Toilets / sanitation</h3><p>I use <strong>SH.STA.BASS.ZS</strong>, “people using at least basic sanitation services,” because it is the closest clean international series for toilet/sanitation access. It is not the same as every household owning a private toilet.</p></article>
+        <article class="confidence-card confidence-caution"><h3>Open defecation</h3><p>I also show <strong>SH.STA.ODFC.ZS</strong>, “people practicing open defecation.” This directly captures the decline in open defecation and helps avoid pretending that sanitation access and open-defecation elimination are identical.</p></article>
+      </div>
+    </section>
+
+    <section class="panel" id="sources">
+      <h2>Source notes</h2>
+      <ol class="source-notes">
+        <li><a href="https://api.worldbank.org/v2/country/IND/indicator/EG.ELC.ACCS.ZS?format=json&per_page=200">World Bank API: EG.ELC.ACCS.ZS, Access to electricity (% of population), India</a> — values used include 2000 = 60.3%, 2014 = 85.1%, 2023 = 99.5%.</li>
+        <li><a href="https://api.worldbank.org/v2/country/IND/indicator/SH.STA.BASS.ZS?format=json&per_page=200">World Bank API: SH.STA.BASS.ZS, People using at least basic sanitation services (% of population), India</a> — values used include 2000 = 14.7%, 2014 = 54.2%, 2024 = 83.4%.</li>
+        <li><a href="https://api.worldbank.org/v2/country/IND/indicator/SH.STA.ODFC.ZS?format=json&per_page=200">World Bank API: SH.STA.ODFC.ZS, People practicing open defecation (% of population), India</a> — values used include 2000 = 73.2%, 2014 = 33.3%, 2024 = 6.7%.</li>
+        <li><a href="https://washdata.org/">WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation and Hygiene (JMP)</a> — sanitation and open-defecation concepts in World Bank WDI are tied to JMP definitions and methodology.</li>
+      </ol>
+    </section>
+  </main>
+  <script>
+    const timelineData = [{"year": 2000, "electricity": 60.3, "basic_sanitation": 14.7, "open_defecation": 73.2}, {"year": 2001, "electricity": 62.0, "basic_sanitation": 17.2, "open_defecation": 70.3}, {"year": 2002, "electricity": 62.3, "basic_sanitation": 20.0, "open_defecation": 67.3}, {"year": 2003, "electricity": 65.4, "basic_sanitation": 22.7, "open_defecation": 64.4}, {"year": 2004, "electricity": 64.4, "basic_sanitation": 25.5, "open_defecation": 61.5}, {"year": 2005, "electricity": 68.8, "basic_sanitation": 28.3, "open_defecation": 58.6}, {"year": 2006, "electricity": 67.9, "basic_sanitation": 31.1, "open_defecation": 55.8}, {"year": 2007, "electricity": 72.3, "basic_sanitation": 33.9, "open_defecation": 52.9}, {"year": 2008, "electricity": 74.1, "basic_sanitation": 36.8, "open_defecation": 50.1}, {"year": 2009, "electricity": 75.0, "basic_sanitation": 39.6, "open_defecation": 47.2}, {"year": 2010, "electricity": 76.3, "basic_sanitation": 42.5, "open_defecation": 44.4}, {"year": 2011, "electricity": 79.5, "basic_sanitation": 45.4, "open_defecation": 41.6}, {"year": 2012, "electricity": 79.9, "basic_sanitation": 48.3, "open_defecation": 38.8}, {"year": 2013, "electricity": 83.1, "basic_sanitation": 51.2, "open_defecation": 36.1}, {"year": 2014, "electricity": 85.1, "basic_sanitation": 54.2, "open_defecation": 33.3}, {"year": 2015, "electricity": 88.0, "basic_sanitation": 57.1, "open_defecation": 30.6}, {"year": 2016, "electricity": 89.6, "basic_sanitation": 60.1, "open_defecation": 27.8}, {"year": 2017, "electricity": 91.8, "basic_sanitation": 63.1, "open_defecation": 25.1}, {"year": 2018, "electricity": 95.7, "basic_sanitation": 66.1, "open_defecation": 22.4}, {"year": 2019, "electricity": 95.9, "basic_sanitation": 69.1, "open_defecation": 19.7}, {"year": 2020, "electricity": 96.5, "basic_sanitation": 72.0, "open_defecation": 17.0}, {"year": 2021, "electricity": 99.6, "basic_sanitation": 74.9, "open_defecation": 14.3}, {"year": 2022, "electricity": 99.2, "basic_sanitation": 77.8, "open_defecation": 11.7}, {"year": 2023, "electricity": 99.5, "basic_sanitation": 80.7, "open_defecation": 9.0}];
+    const els = {
+      year: document.getElementById('z-year'), electricity: document.getElementById('z-electricity'), sanitation: document.getElementById('z-sanitation'), open: document.getElementById('z-open'),
+      be: document.getElementById('bar-electricity'), bs: document.getElementById('bar-sanitation'), bo: document.getElementById('bar-open'), slider: document.getElementById('year-slider'), play: document.getElementById('play-timeline')
+    };
+    let timer = null;
+    function fmt(v) { return Number(v).toFixed(1) + '%'; }
+    function show(i) {
+      const d = timelineData[i]; if (!d) return;
+      els.year.textContent = d.year;
+      els.electricity.textContent = fmt(d.electricity); els.sanitation.textContent = fmt(d.basic_sanitation); els.open.textContent = fmt(d.open_defecation);
+      els.be.style.width = d.electricity + '%'; els.bs.style.width = d.basic_sanitation + '%'; els.bo.style.width = d.open_defecation + '%';
+      els.slider.value = i;
+    }
+    els.slider.addEventListener('input', e => show(Number(e.target.value)));
+    els.play.addEventListener('click', () => {
+      if (timer) { clearInterval(timer); timer = null; els.play.textContent = 'Play'; return; }
+      els.play.textContent = 'Pause';
+      timer = setInterval(() => {
+        let next = (Number(els.slider.value) + 1) % timelineData.length;
+        show(next);
+      }, 650);
+    });
+    show(0);
+  </script>
+</body>
+</html>

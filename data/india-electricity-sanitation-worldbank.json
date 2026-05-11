@@ -1,0 +1,347 @@
+{
+  "electricity": {
+    "code": "EG.ELC.ACCS.ZS",
+    "label": "Access to electricity (% of population)",
+    "source_url": "https://api.worldbank.org/v2/country/IND/indicator/EG.ELC.ACCS.ZS?format=json&per_page=200",
+    "points": [
+      {
+        "year": 1993,
+        "value": 50.9
+      },
+      {
+        "year": 1994,
+        "value": 49.8
+      },
+      {
+        "year": 1995,
+        "value": 51.4
+      },
+      {
+        "year": 1996,
+        "value": 53.0
+      },
+      {
+        "year": 1997,
+        "value": 54.6
+      },
+      {
+        "year": 1998,
+        "value": 56.2
+      },
+      {
+        "year": 1999,
+        "value": 60.1
+      },
+      {
+        "year": 2000,
+        "value": 60.3
+      },
+      {
+        "year": 2001,
+        "value": 62.0
+      },
+      {
+        "year": 2002,
+        "value": 62.3
+      },
+      {
+        "year": 2003,
+        "value": 65.4
+      },
+      {
+        "year": 2004,
+        "value": 64.4
+      },
+      {
+        "year": 2005,
+        "value": 68.8
+      },
+      {
+        "year": 2006,
+        "value": 67.9
+      },
+      {
+        "year": 2007,
+        "value": 72.3
+      },
+      {
+        "year": 2008,
+        "value": 74.1
+      },
+      {
+        "year": 2009,
+        "value": 75.0
+      },
+      {
+        "year": 2010,
+        "value": 76.3
+      },
+      {
+        "year": 2011,
+        "value": 79.5
+      },
+      {
+        "year": 2012,
+        "value": 79.9
+      },
+      {
+        "year": 2013,
+        "value": 83.1
+      },
+      {
+        "year": 2014,
+        "value": 85.1
+      },
+      {
+        "year": 2015,
+        "value": 88.0
+      },
+      {
+        "year": 2016,
+        "value": 89.6
+      },
+      {
+        "year": 2017,
+        "value": 91.8
+      },
+      {
+        "year": 2018,
+        "value": 95.7
+      },
+      {
+        "year": 2019,
+        "value": 95.9
+      },
+      {
+        "year": 2020,
+        "value": 96.5
+      },
+      {
+        "year": 2021,
+        "value": 99.6
+      },
+      {
+        "year": 2022,
+        "value": 99.2
+      },
+      {
+        "year": 2023,
+        "value": 99.5
+      }
+    ]
+  },
+  "basic_sanitation": {
+    "code": "SH.STA.BASS.ZS",
+    "label": "People using at least basic sanitation services (% of population)",
+    "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.STA.BASS.ZS?format=json&per_page=200",
+    "points": [
+      {
+        "year": 2000,
+        "value": 14.7
+      },
+      {
+        "year": 2001,
+        "value": 17.2
+      },
+      {
+        "year": 2002,
+        "value": 20.0
+      },
+      {
+        "year": 2003,
+        "value": 22.7
+      },
+      {
+        "year": 2004,
+        "value": 25.5
+      },
+      {
+        "year": 2005,
+        "value": 28.3
+      },
+      {
+        "year": 2006,
+        "value": 31.1
+      },
+      {
+        "year": 2007,
+        "value": 33.9
+      },
+      {
+        "year": 2008,
+        "value": 36.8
+      },
+      {
+        "year": 2009,
+        "value": 39.6
+      },
+      {
+        "year": 2010,
+        "value": 42.5
+      },
+      {
+        "year": 2011,
+        "value": 45.4
+      },
+      {
+        "year": 2012,
+        "value": 48.3
+      },
+      {
+        "year": 2013,
+        "value": 51.2
+      },
+      {
+        "year": 2014,
+        "value": 54.2
+      },
+      {
+        "year": 2015,
+        "value": 57.1
+      },
+      {
+        "year": 2016,
+        "value": 60.1
+      },
+      {
+        "year": 2017,
+        "value": 63.1
+      },
+      {
+        "year": 2018,
+        "value": 66.1
+      },
+      {
+        "year": 2019,
+        "value": 69.1
+      },
+      {
+        "year": 2020,
+        "value": 72.0
+      },
+      {
+        "year": 2021,
+        "value": 74.9
+      },
+      {
+        "year": 2022,
+        "value": 77.8
+      },
+      {
+        "year": 2023,
+        "value": 80.7
+      },
+      {
+        "year": 2024,
+        "value": 83.4
+      }
+    ]
+  },
+  "open_defecation": {
+    "code": "SH.STA.ODFC.ZS",
+    "label": "People practicing open defecation (% of population)",
+    "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.STA.ODFC.ZS?format=json&per_page=200",
+    "points": [
+      {
+        "year": 2000,
+        "value": 73.2
+      },
+      {
+        "year": 2001,
+        "value": 70.3
+      },
+      {
+        "year": 2002,
+        "value": 67.3
+      },
+      {
+        "year": 2003,
+        "value": 64.4
+      },
+      {
+        "year": 2004,
+        "value": 61.5
+      },
+      {
+        "year": 2005,
+        "value": 58.6
+      },
+      {
+        "year": 2006,
+        "value": 55.8
+      },
+      {
+        "year": 2007,
+        "value": 52.9
+      },
+      {
+        "year": 2008,
+        "value": 50.1
+      },
+      {
+        "year": 2009,
+        "value": 47.2
+      },
+      {
+        "year": 2010,
+        "value": 44.4
+      },
+      {
+        "year": 2011,
+        "value": 41.6
+      },
+      {
+        "year": 2012,
+        "value": 38.8
+      },
+      {
+        "year": 2013,
+        "value": 36.1
+      },
+      {
+        "year": 2014,
+        "value": 33.3
+      },
+      {
+        "year": 2015,
+        "value": 30.6
+      },
+      {
+        "year": 2016,
+        "value": 27.8
+      },
+      {
+        "year": 2017,
+        "value": 25.1
+      },
+      {
+        "year": 2018,
+        "value": 22.4
+      },
+      {
+        "year": 2019,
+        "value": 19.7
+      },
+      {
+        "year": 2020,
+        "value": 17.0
+      },
+      {
+        "year": 2021,
+        "value": 14.3
+      },
+      {
+        "year": 2022,
+        "value": 11.7
+      },
+      {
+        "year": 2023,
+        "value": 9.0
+      },
+      {
+        "year": 2024,
+        "value": 6.7
+      }
+    ]
+  }
+}
