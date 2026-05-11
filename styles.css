@@ -1389,3 +1389,200 @@ html { scroll-behavior: smooth; }
     font-size: 10px;
   }
 }
+
+
+/* Dracula/Nordic compact homepage refresh */
+.theme-dracula-home {
+  --bg0: #0f111a;
+  --bg1: #161821;
+  --bg2: #1f2230;
+  --card: rgba(255,255,255,0.055);
+  --card2: rgba(255,255,255,0.085);
+  --line: rgba(255,255,255,0.11);
+  --text: #f8f8f2;
+  --muted: #b8c0d0;
+  --soft: #8790a3;
+  --cyan: #8be9fd;
+  --purple: #bd93f9;
+  --pink: #ff79c6;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --nord-blue: #88c0d0;
+  background:
+    radial-gradient(circle at 10% -10%, rgba(189,147,249,.28), transparent 32rem),
+    radial-gradient(circle at 92% 4%, rgba(139,233,253,.18), transparent 30rem),
+    linear-gradient(180deg, #0b0d13 0%, #11131c 45%, #161821 100%);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.theme-dracula-home a { color: var(--cyan); }
+.theme-dracula-home main.library-wrap { max-width: 1180px; padding: 18px; }
+.theme-dracula-home .hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  margin-bottom: 14px;
+  padding: clamp(20px, 3vw, 34px);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(31,34,48,.94), rgba(22,24,33,.86)),
+    radial-gradient(circle at 84% 20%, rgba(255,121,198,.28), transparent 20rem),
+    radial-gradient(circle at 10% 10%, rgba(139,233,253,.22), transparent 20rem);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 70px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.theme-dracula-home .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, black, transparent 86%);
+  pointer-events: none;
+}
+.theme-dracula-home .hero-copy, .theme-dracula-home .hero-art { position: relative; z-index: 1; }
+.theme-dracula-home .hero-home { grid-template-columns: minmax(0, 1.45fr) minmax(180px, .55fr); gap: 20px; }
+.theme-dracula-home .hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.9rem);
+  letter-spacing: -0.075em;
+  line-height: .9;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+.theme-dracula-home .lead { max-width: 760px; color: var(--muted); font-size: 1rem; line-height: 1.55; margin-bottom: 0; }
+.theme-dracula-home .eyebrow {
+  color: var(--purple);
+  opacity: 1;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.theme-dracula-home .hero-art img {
+  width: min(100%, 210px);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow: 0 18px 44px rgba(0,0,0,.38), 0 0 0 8px rgba(255,255,255,.035);
+}
+.theme-dracula-home .button {
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 750;
+  font-size: .92rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.theme-dracula-home .button:hover { background: rgba(255,255,255,.11); transform: translateY(-1px); }
+.theme-dracula-home .button.primary {
+  color: #0f111a;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  border-color: transparent;
+}
+.theme-dracula-home .hero-actions { margin-top: 16px; gap: 9px; }
+.overview-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+  margin: 0 0 14px;
+}
+.overview-chip {
+  min-width: 0;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.045);
+}
+.overview-chip span { display:block; color: var(--soft); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+.overview-chip strong { display:block; color: var(--text); margin-top: 4px; font-size: .98rem; }
+.theme-dracula-home .panel,
+.theme-dracula-home .book-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 45px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.045);
+}
+.theme-dracula-home .tab-hub { padding: 16px; border-radius: 22px; margin-bottom: 16px; }
+.theme-dracula-home .compact-head { margin-bottom: 12px; align-items: center; }
+.theme-dracula-home .section-note, .theme-dracula-home .book-meta, .theme-dracula-home .muted, .theme-dracula-home .stat-note { color: var(--muted); }
+.theme-dracula-home .section-head h2,
+.theme-dracula-home .book-card h2,
+.theme-dracula-home .panel h2,
+.theme-dracula-home .confidence-card h3 { color: var(--text); }
+.tab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.tab-card {
+  position: relative;
+  display: grid;
+  min-height: 142px;
+  padding: 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--text) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.11);
+  overflow: hidden;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+.tab-card::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: -42px;
+  top: -46px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(139,233,253,.18), transparent 68%);
+}
+.tab-card-hot::after { background: radial-gradient(circle, rgba(255,121,198,.24), transparent 68%); }
+.tab-card:hover { text-decoration: none; transform: translateY(-2px); border-color: rgba(139,233,253,.48); background: linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.055)); }
+.tab-type {
+  width: max-content;
+  color: #0f111a;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: .68rem;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.tab-card-hot .tab-type { background: linear-gradient(135deg, var(--cyan), var(--green)); }
+.tab-card strong { font-size: 1.05rem; letter-spacing: -.02em; margin-top: 10px; }
+.tab-card p { margin: 6px 0 10px; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.tab-meta { color: var(--soft); font-size: .78rem; align-self: end; }
+.theme-dracula-home .stats-shell {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
+}
+.theme-dracula-home .stat-card,
+.theme-dracula-home .confidence-card,
+.theme-dracula-home .inner-attribution-panel,
+.theme-dracula-home .source-chip {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+  color: var(--text);
+}
+.theme-dracula-home .stat-number { color: var(--cyan); }
+.theme-dracula-home .stat-kicker { color: var(--purple); }
+.theme-dracula-home .stat-label { color: var(--text); }
+.theme-dracula-home .stat-cta { color: var(--green); }
+.theme-dracula-home .quicklinks li, .theme-dracula-home .source-chip { color: var(--muted); }
+.theme-dracula-home .books-grid { gap: 12px; }
+.theme-dracula-home .book-card { padding: 16px; border-radius: 20px; }
+.theme-dracula-home .book-card.featured { border: 1px solid rgba(139,233,253,.42); }
+.theme-dracula-home .book-cover { border: 1px solid rgba(255,255,255,.1); box-shadow: 0 18px 34px rgba(0,0,0,.34); }
+@media (max-width: 900px) {
+  .theme-dracula-home .hero-home, .overview-strip, .tab-grid { grid-template-columns: 1fr; }
+  .theme-dracula-home .hero-art { order: 0; justify-content: flex-start; }
+  .theme-dracula-home .hero-art img { width: 150px; }
+  .tab-card { min-height: 0; }
+}
+@media (min-width: 901px) {
+  .theme-dracula-home .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

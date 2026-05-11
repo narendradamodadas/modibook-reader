@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Modi Book Reader Library</title>
-  <link rel="stylesheet" href="/modibook-reader/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="theme-dracula-home">
   <main class="library-wrap">
     <header class="hero hero-home">
       <div class="hero-copy">
@@ -24,99 +24,66 @@
       </div>
     </header>
 
-    <section class="info-grid">
-      <article class="panel">
-        <h2>What this archive is for</h2>
-        <p>It is a dedicated library for Narendra Modi’s books and written works, converted from scans into a readable HTML format instead of leaving them trapped inside raw PDFs.</p>
+    <section class="overview-strip">
+      <article class="overview-chip">
+        <span>Archive mode</span>
+        <strong>Scan + OCR + translation</strong>
       </article>
-      <article class="panel">
-        <h2>How each book is presented</h2>
-        <p>Every book can include the original scanned page image, OCR-extracted source text, and an English translation so readers can compare the source directly.</p>
+      <article class="overview-chip">
+        <span>Source style</span>
+        <strong>Cited static pages</strong>
       </article>
-      <article class="panel">
-        <h2>Reading note</h2>
-        <p>Because these editions come from OCR and machine translation, some pages will be rough. The original scan is always shown so the source remains visible and verifiable.</p>
+      <article class="overview-chip">
+        <span>Fast access</span>
+        <strong>Tabs below</strong>
       </article>
     </section>
 
-    <section class="panel spotlight-panel">
-      <div class="section-head">
+    <section class="tab-hub panel" aria-labelledby="tab-hub-title">
+      <div class="section-head compact-head">
         <div>
-          <div class="eyebrow stat-eyebrow">Comparison tab</div>
-          <h2>Declared net worth comparison</h2>
+          <div class="eyebrow stat-eyebrow">Comparison dashboard</div>
+          <h2 id="tab-hub-title">All tabs at a glance</h2>
         </div>
-        <p class="section-note">Open the affidavit-based comparison page for Narendra Modi and Rahul Gandhi, using 2024 MyNeta / ADR candidate disclosures.</p>
+        <p class="section-note">Compact overview of the public research and comparison pages. Each card opens a static, source-backed tab.</p>
       </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="net-worth-comparison.html">Open net worth tab</a>
-      </div>
-    </section>
-
-
-    <section class="panel spotlight-panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow stat-eyebrow">Comparison tab</div>
-          <h2>Poverty in India</h2>
-        </div>
-        <p class="section-note">Open a separate page with two cited poverty graphs, including ruling-party background bands and a leadership timeline.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="india-poverty-trends.html">Open poverty tab</a>
-      </div>
-    </section>
-
-    <section class="panel spotlight-panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow stat-eyebrow">Zeitraffer tab</div>
-          <h2>Electricity and toilets in India</h2>
-        </div>
-        <p class="section-note">Open an animated, source-backed time-lapse of electricity access, basic sanitation access, and open-defecation rates from World Bank/JMP data.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="india-electricity-sanitation.html">Open infrastructure tab</a>
-      </div>
-    </section>
-
-
-    <section class="panel spotlight-panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow stat-eyebrow">Comparison tab</div>
-          <h2>Terror attacks in India</h2>
-        </div>
-        <p class="section-note">Open a graph page for terror-attack frequency and religion / ideology share of attributed perpetrator groups over time.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="india-terror-attacks.html">Open terror tab</a>
-      </div>
-    </section>
-
-    <section class="panel spotlight-panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow stat-eyebrow">Comparison tab</div>
-          <h2>GDP per capita comparison</h2>
-        </div>
-        <p class="section-note">Open a long-run GDP per capita page comparing India with Pakistan, China, and Bangladesh, with a marker for when Modi became prime minister.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="gdp-per-capita-comparison.html">Open GDP tab</a>
-      </div>
-    </section>
-
-
-    <section class="panel spotlight-panel">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow stat-eyebrow">Comparison tab</div>
-          <h2>NGO connections</h2>
-        </div>
-        <p class="section-note">Open a sourced page tracking politicians with formal links to Christian or Muslim-run trusts, schools, and educational institutions.</p>
-      </div>
-      <div class="card-actions">
-        <a class="button dark-button" href="ngo-connections.html">Open NGO tab</a>
+      <div class="tab-grid">
+        <a class="tab-card tab-card-hot" href="india-electricity-sanitation.html">
+          <span class="tab-type">Zeitraffer</span>
+          <strong>Electricity & toilets</strong>
+          <p>Animated World Bank time-lapse: electricity, sanitation, open defecation.</p>
+          <span class="tab-meta">2000–2024 · India</span>
+        </a>
+        <a class="tab-card" href="india-poverty-trends.html">
+          <span class="tab-type">Trend chart</span>
+          <strong>Poverty in India</strong>
+          <p>Cited poverty graphs with ruling-party background bands and timeline markers.</p>
+          <span class="tab-meta">World Bank / official series</span>
+        </a>
+        <a class="tab-card" href="gdp-per-capita-comparison.html">
+          <span class="tab-type">Country compare</span>
+          <strong>GDP per capita</strong>
+          <p>India compared with Pakistan, China, and Bangladesh over the long run.</p>
+          <span class="tab-meta">International comparison</span>
+        </a>
+        <a class="tab-card" href="net-worth-comparison.html">
+          <span class="tab-type">Affidavits</span>
+          <strong>Net worth comparison</strong>
+          <p>Modi and Rahul Gandhi based on 2024 MyNeta / ADR disclosures.</p>
+          <span class="tab-meta">Candidate affidavits</span>
+        </a>
+        <a class="tab-card" href="india-terror-attacks.html">
+          <span class="tab-type">Security graph</span>
+          <strong>Terror attacks in India</strong>
+          <p>Attack frequency and attributed perpetrator ideology / religion share over time.</p>
+          <span class="tab-meta">Timeline + attribution notes</span>
+        </a>
+        <a class="tab-card" href="ngo-connections.html">
+          <span class="tab-type">Sourced network</span>
+          <strong>NGO connections</strong>
+          <p>Politicians with formal links to Christian or Muslim-run trusts and institutions.</p>
+          <span class="tab-meta">Entity links + citations</span>
+        </a>
       </div>
     </section>
 
